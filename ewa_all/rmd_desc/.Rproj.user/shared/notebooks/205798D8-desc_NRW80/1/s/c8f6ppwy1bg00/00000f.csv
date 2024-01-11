@@ -1,7 +1,0 @@
-"0","gglikert_stacked(df_alterl_balance,
-                 sort = ""ascending""
-                 )
-"
-"2","Error in broom.helpers::.select_to_varnames(select = { : 
-  object 'df_alterl_balance' not found
-"

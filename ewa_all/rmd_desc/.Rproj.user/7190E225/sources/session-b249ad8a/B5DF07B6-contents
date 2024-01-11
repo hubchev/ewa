@@ -1,7 +1,0 @@
-
-  table(df_alterl$alterl1)
-
-  
-  df_alterl |> 
-    map(~ table(.))
-  
