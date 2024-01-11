@@ -1,0 +1,82 @@
+#Arbeitsvereichnis zuweisen (Ordner für Skript und ggfs Daten)
+setwd("C:/Users/P19030/2023- CFH/1 Lehre/4 WS2324/2 BP94 Statistik II/2 SE")
+
+
+#BP94 Statistik II Seminar/Tutorium
+#Sitzung 3
+
+#A. Anlegen eines Datensatzes durch Eingabe von Werten: 
+
+groesse <- c(174,169,180,163,172,165,178,181,167,175,173,168,182,170,177)
+stud <- c(rep("1",5), rep("2",5), rep("3",5))
+#oder
+stud2 <- c("1","1","1","1","1","2","2","2","2","2","3","3","3","3","3")
+
+my.data <- data.frame(value=groesse, group=stud)
+
+#B. Einlesen eines externen Datensatzes (z.B. Excel): 
+
+my.data2 <- read.csv("Daten3R.csv", header=TRUE, sep=",")
+my.data2$group <-my.data2$Fach
+my.data2$value <-my.data2$Groesse
+
+
+
+#Datei für Aufgabe 2 Übungsblatt 2 einlesen  
+#<-- bitte die aktualisierte datei Blatt2 nehmen,
+#da Hochkommata zuvor für Einleseprobleme gesorgt hatten
+
+blatt2 <- read.csv("Blatt2.csv", header=TRUE, sep=",")
+
+
+
+#für Tukey-Test sicherstellen, dass group ein Faktor ist 
+is.factor(my.data$group)
+my.data$group <- as.factor(my.data$group)
+
+my.data2$group <- as.factor(my.data2$group)
+
+
+#ANOVA                    
+aov.result <- aov(value ~ group, data = my.data)
+summary(aov.result)
+
+
+#Sitzung 4 Seminar/Tutorium
+
+#Tukeys HSD
+library(multcomp)
+
+aov.result <- aov(value ~ group, data = my.data)
+
+ANOVA.postHoc <- glht(aov.result, linfct = mcp(group = "Tukey"))
+summary(ANOVA.postHoc)
+
+
+#Planned Contrasts
+
+#set 2 - orthogonal
+c1.PMDvMT <- c(-1,-1,2)
+c2s.PvMD <- c(-1,1,0)
+contrasts(my.data$group)<-cbind(c1.PMDvMT,c2s.PvMD) #nur p-1 möglich
+
+aov.result <- aov(value ~ group, data = my.data)
+
+summary.aov(aov.result, split=list(group=list("P & MD vs MT"=1,
+                                              "P vs MD" = 2))) 
+
+
+#set 1 - non-orthogonal
+c1.PMDvMT <- c(1,1,-2)
+c2.MDvMT <- c(0,1,-1)
+contrasts(my.data$group)<-cbind(c2.MDvMT,c1.PMDvMT) #auf Reihenfolge achten
+
+aov.result <- aov(value ~ group, data = my.data)
+
+summary.aov(aov.result, split=list(group=list("MD vs MT"=1,
+                                              "P & MD vs MT" = 2))) 
+
+
+
+
+

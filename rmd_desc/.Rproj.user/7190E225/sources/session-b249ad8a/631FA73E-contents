@@ -1,0 +1,166 @@
+rm(list = ls())
+load("data/gesis.RData")
+
+library(tidyverse)
+library(likert)
+
+
+df <- dfsav |>
+  select(starts_with("alter"), 
+         ALT_agegroup, 
+         ALT_sex, 
+         famst1, famst7, 
+         demtectcorr, 
+         kogstat, 
+         final, 
+         geschlecht)
+
+df_alterl <- df |> 
+  select(alterl1, 
+         alterl2, 
+         alterl3, 
+         alterl4, 
+         alterl5, 
+         alterl6, 
+         alterl7, 
+         alterl8, 
+         alterl9, 
+         alterl10) |> 
+  unlabelled() |>
+  droplevels() |> 
+  as.data.frame()
+
+
+
+
+
+
+var_lab(df_alterl$alterl1) <- "sdfs"
+
+li <- df_alterl |>
+  likert()
+
+gglikert(li)
+
+plot(li)
+summary(li)
+summary(df_alterl$alterl1)
+
+factor(df_alterl$alterl1, levels=c(1:4), labels = c("1: Meget enig","2: Lidt enig","3: Lidt uenig", "4: Meget uenig"))
+
+variables <- c("alterl1", "alterl2", "alterl3", "alterl4", "alterl5", "alterl6", "alterl7", "alterl8", "alterl9", "alterl10")
+
+
+# Check the number of levels for each variable
+sapply(df_alterl[variables], nlevels)
+
+
+var_lab(df_alterl$alterl1)
+val_lab(df_alterl$alterl1)
+unique(df_alterl$alterl1)
+
+li <- df_alterl |> 
+  as.factor() |> 
+  as.data.frame() |> 
+  likert()
+
+plot(li)
+leskim(df_alterl)
+
+df_alterl_3 <- df_alterl %>%
+  mutate(across(alterl1:alterl10, ~ 
+                  ifelse(. < 1 | . > 5, 
+                         recode_factor(., 
+                                       `-7`=NA,
+                                       `-4`=NA,
+                                       `-3`=NA,
+                                       `-2`=NA,
+                                       `-1`=NA ,
+                                       .)
+                  )))
+
+unique(df_alterl_3$alterl1)
+
+
+df_alterl_na <- df_alterl |> 
+  mutate(across(alterl1:alterl10, ~ ifelse(. < 1 | . > 5, NA, .)))
+unique(df_alterl_na$alterl1)
+
+
+df_alterl_na2 <- df_alterl |> 
+  mutate(across(alterl1:alterl10, ~ case_when(. < 1 | . > 5 ~ NA_character_,
+                                              TRUE ~ as.character(.))))
+unique(df_alterl_na2$alterl1)
+
+
+
+
+
+
+
+
+
+
+
+# install.packages("skimr")
+library("skimr")
+library("tidyverse")
+library("labelled")
+library("haven")
+df <- dfsav |>
+  select(starts_with("alter"), 
+         famst1, famst7, demtectcorr, kogstat, final, geschlecht) |> 
+  unlabelled()
+skim(df)
+
+unique(df$alterl1)
+distinct(df$alterl1)
+li <- df |> 
+  select(starts_with("alter")) |> 
+  select(-alter_int, -alter_cont, -alterl_m1, -alterl_m2, -alterp) |> 
+  drop_unused_value_labels() |> 
+  as.data.frame() |> 
+  likert()
+
+plot(li)
+
+table(df$alterl1)
+
+# install.packages("viridis")
+install.packages("gdtools")
+install.packages("hrbrthemes")
+install.packages("viridisLite")
+# Libraries
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+
+# create a dataset
+data <- data.frame(
+  name=c( rep("A",500), rep("B",500), rep("B",500), rep("C",20), rep('D', 100)  ),
+  value=c( rnorm(500, 10, 5), rnorm(500, 13, 1), rnorm(500, 18, 1), rnorm(20, 25, 4), rnorm(100, 12, 1) )
+)
+
+# Plot
+df %>%
+  drop_na(alterl1) |> 
+  ggplot( aes(x=geschlecht, y=alterl1, fill=geschlecht)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+  geom_jitter(color="black", size=0.4, alpha=0.9) +
+  theme_minimal() +
+  theme(
+    legend.position="none",
+    plot.title = element_text(size=11)
+  ) +
+  ggtitle("A boxplot with jitter") +
+  xlab("")
+
+
+ggplot(df, aes(x =  , y = value, fill = variable)) + 
+  geom_bar(stat = 'identity') + 
+  ggtitle('18 Statements / Session 1 (Total)') + 
+  xlab('Statement') + 
+  ylab('Participants') + 
+  coord_flip() + 
+  theme_minimal()
