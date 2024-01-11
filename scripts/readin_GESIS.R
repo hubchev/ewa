@@ -1,5 +1,5 @@
 # set working directory
-setwd("~/Dropbox/hsf/23-ws/ewa/ewa_all")
+# setwd("~/Dropbox/hsf/23-ws/ewa/ewa_all")
 
 # clear the environment
 # rm(list = ls())

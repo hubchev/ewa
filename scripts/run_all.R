@@ -1,6 +1,6 @@
 # Set the base directory, i.e., where the ewa folder is:
 base_directory <- "~/Dropbox/hsf/23-ws/ewa/ewa_all/"
-
+setwd(base_directory)
 # Make sure you download the data folder. This folder is not on Github as it 
 # contains confidential data, see: https://doi.org/10.4232/1.13978
 
@@ -11,13 +11,11 @@ conflict_prefer("filter", "dplyr")
 
 ###################################################
 # Read in gesis data
-setwd(paste0(base_directory, "scripts"))
-source("readin_GESIS.R")
+source("scripts/readin_GESIS.R")
 
 ###################################################
 # Read in gesis data
-setwd(paste0(base_directory, "scripts"))
-source("desc_age_perception.R")
+source("scripts/desc_age_perception.R")
 
 ###################################################
 ## rmd_desc: "Descriptive Statistics of the NRW80+ Dataset"

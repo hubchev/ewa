@@ -1,4 +1,4 @@
-setwd("~/Dropbox/hsf/23-ws/ewa/ewa_all/")
+# setwd("~/Dropbox/hsf/23-ws/ewa/ewa_all/")
 
 # Clear environment
 # rm(list = ls())
@@ -8,7 +8,7 @@ if (!require(pacman)) install.packages("pacman")
 pacman::p_load(tidyverse, haven, psych, sjlabelled)
 
 # load data
-load("../data/gesis.RData")
+load("data/gesis.RData")
 
 dfmin <- dfsav |>
   select(alterl_m1,                        # subset data 
