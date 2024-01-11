@@ -5,7 +5,7 @@
 
 # (Install and) load pacman package 
 if (!require(pacman)) install.packages("pacman")
-pacman::p_load(tidyverse, haven, psych, sjlabelled)
+pacman::p_load(tidyverse, haven, psych, sjlabelled, ggthemes)
 
 # load data
 load("data/gesis.RData")

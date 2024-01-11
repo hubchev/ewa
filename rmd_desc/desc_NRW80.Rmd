@@ -25,13 +25,12 @@ affiliation:
     institution   : "Charlotte Fresenius University"
 
 authornote: |
-  All files related to that paper are hostes on github. see: [https://github.com/hubchev/courses/tree/main/rmd/rmd_desc](https://github.com/hubchev/courses/tree/main/rmd/rmd_desc). 
+  All files related to that paper are hostes on github. see: [https://github.com/hubchev/ewa](https://github.com/hubchev/ewa). 
 
 abstract: |
   In this paper, I illustrate the process of importing NRW80+ data [see @Zank2022Quality] into R. Additionally, I present descriptive statistics and graphical visualizations to gain insights into Likert-scaled surveys. The paper adheres to the APA style, implementing the R template provided by the 'papaja' package [@R-papaja].
 
 keywords          : "papaja, NRW80+, descriptive statistics"
-wordcount         : "`r wordcountaddin::word_count('desc_NRW80.Rmd')`"
 
 bibliography      : "references_NRW.bib"
 
@@ -47,20 +46,15 @@ footnotelist      : no
 
 classoption       : "doc"
 output            : papaja::apa6_pdf 
-toc : yes
+toc               : yes
 ---
 
-```{r setup, include = FALSE}
-library("tinylabels")
-library("papaja")
-r_refs("r-references.bib")
-```
 
 ```{r analysis-preferences}
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
-rm(list = ls())
+# rm(list = ls())
 ```
 
 
@@ -75,6 +69,7 @@ if (!require(pacman)) install.packages("pacman")
 # load packages that are already installed and install packages that are not 
 # installed yet and then load them:
 pacman::p_load(tinylabels, 
+               papaja,
                haven, 
                labelled, 
                janitor,
@@ -88,53 +83,16 @@ pacman::p_load(tinylabels,
                psych,
                sjlabelled,
                sjmisc,
-               tidyverse)
+               tidyverse, 
+               MASS,
+               dplyr)
 
 sessionInfo()
 ```
 
 # Import Data
 
-I host a R script on my GitHub account (see <https://raw.githubusercontent.com/hubchev/courses/main/scr/readin_GESIS.R>) that explains how to import the NRW80+ data. You find the content of the script below. I have manually saved the data, `gesis.RData`, in a subfolder named `gesis.RData`.
-
-```{r, eval=FALSE, echo=TRUE}
-# set working directory
-setwd("/home/sthu/Dropbox/hsf/23-ws/ewa/")
-
-# clear the environment
-rm(list = ls())
-
-# load packages
-# install.packages("haven")
-# install.packages("tidyverse")
-library("haven")
-library("tidyverse")
-
-# Data manually downloaded from: 
-# Zank, Susanne, Woopen, Christiane, Wagner, Michael, Rietz, Christian, & 
-# Kaspar, Roman (2022). Quality of Life and Well-being of Very Old People in 
-# NRW (Representative Survey NRW80+) Cross-Section Wave 1. GESIS, Cologne. 
-# ZA7558 Data file Version 2.0.0, https://doi.org/10.4232/1.13978.
-
-# All source data and information to the data can be found in the subfolder 
-# "source".
-
-# unzip the ZA7558_v2-0-0.dta.zip and save it in data
-unzip("source/ZA7558_v2-0-0.dta.zip", exdir = "data/.")
-
-# read in the data
-dfdta <- read_dta("data/ZA7558_v2-0-0.dta")
-dfsav <- read_sav("source/ZA7558_v2-0-0.sav")
-
-# check if both formats provide the same data
-all.equal(dfdta, dfsav)
-
-# --> this is NOT the case. The labels and missings are treated differently. 
-
-# save the environment
-save.image(file="data/gesis.RData")
-
-```
+I host a R script on my GitHub account (see <https://raw.githubusercontent.com/hubchev/courses/main/scr/readin_GESIS.R>) that explains how to import the NRW80+ data. I have manually saved the data, `gesis.RData`, in a subfolder named `data`.
 
 # How to Use the NRW80+ Data
 
@@ -144,8 +102,7 @@ I load the data and select some variables that are of particular interest to me.
 
 ```{r echo=TRUE}
 getwd()
-load("data/gesis.RData")
-
+load("../data/gesis.RData")
 df <- dfdta |>
   select(starts_with("alter"), 
          ALT_agegroup, 
@@ -377,7 +334,7 @@ As we are interested in the differences of the two samples, it makes sense to lo
 sumstat_alter_psych_bal <- df_alterl_balance |>
   psych::describe() |> 
   as_tibble(rownames="Question")  |> 
-  select(-skew, -kurtosis, -range, -vars) 
+  dplyr::select(-skew, -kurtosis, -range, -vars) 
 
 apa_table(
   sumstat_alter_psych_bal
