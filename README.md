@@ -1,14 +1,19 @@
 # Empirisch-wissenschaftlich Arbeiten (ewa)
 
-I host stuff here that relates to the course Empirisch-wissenschaftlich Arbeiten (ewa) at the Charlotte Fresenius Hochschule.
+This repo hosts content related to the "Empirisch-wissenschaftlich Arbeiten (ewa)" course at Charlotte Fresenius Hochschule.
 
-To run all scripts and compile all R Markdown files you should run the main script which I called "run_all.R". It is in the directory "scripts".
+To execute all scripts and compile R Markdown files, use the main script named "run_all.R" located in the "scripts" directory.
 
-A prerequisite to run this script is that you have the "data" directory. Unfortunately, this folder is not on Github as it contains data taken from https://doi.org/10.4232/1.13978 and you need to register (free of costs) there to download the data. Students of the subject can download the respective data from `studynet`.
+A prerequisite for running this script is having the "data" directory. Unfortunately, the files of this folder are not available on GitHub as it contains data sourced from https://doi.org/10.4232/1.13978, and you need to register (free of charge) there to download the data. Students enrolled in the course can access the relevant data on studynet.
 
-The data directory should at least contain the following files:
+The "data" directory should include, at a minimum, the following files:
 - ModKogDat.csv
 - ModKogDat3F.csv
 - ZA7558_v2-0-0.dta.zip
 - ZA7558_v2-0-0.sav
  
+You can either clone the repo with 
+
+`git clone https://github.com/hubchev/ewa`
+
+or you can unzip the zipped file `ewa.zip`.
