@@ -30,3 +30,6 @@ all.equal(dfdta, dfsav)
 
 # save the environment
 save.image(file="data/gesis.RData")
+
+# unload packages
+pacman::p_unload(all)

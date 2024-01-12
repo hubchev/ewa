@@ -129,6 +129,5 @@ bp_b <- dflong |>
 bp_b
 
 
-# knitr::spin("desc_age_perception.R")
-
-
+# unload packages
+pacman::p_unload(all)

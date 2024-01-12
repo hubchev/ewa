@@ -1,23 +1,18 @@
-## ----setup, include = FALSE-------------------------------------------------------------
-library("tinylabels")
-library("papaja")
-r_refs("r-references.bib")
-
-
-## ----analysis-preferences---------------------------------------------------------------
+## ----analysis-preferences-------------------------------------------------------------------------------
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
-rm(list = ls())
+# rm(list = ls())
 
 
-## ----echo=TRUE, eval=TRUE---------------------------------------------------------------
+## ----echo=TRUE, eval=TRUE-------------------------------------------------------------------------------
 # (Install and) load pacman package 
 if (!require(pacman)) install.packages("pacman")
 
 # load packages that are already installed and install packages that are not 
 # installed yet and then load them:
 pacman::p_load(tinylabels, 
+               papaja,
                haven, 
                labelled, 
                janitor,
@@ -31,54 +26,17 @@ pacman::p_load(tinylabels,
                psych,
                sjlabelled,
                sjmisc,
-               tidyverse)
+               tidyverse, 
+               MASS,
+               dplyr,
+               magick)
 
 sessionInfo()
 
 
-## ----eval=FALSE, echo=TRUE--------------------------------------------------------------
-## # set working directory
-## setwd("/home/sthu/Dropbox/hsf/23-ws/ewa/")
-## 
-## # clear the environment
-## rm(list = ls())
-## 
-## # load packages
-## # install.packages("haven")
-## # install.packages("tidyverse")
-## library("haven")
-## library("tidyverse")
-## 
-## # Data manually downloaded from:
-## # Zank, Susanne, Woopen, Christiane, Wagner, Michael, Rietz, Christian, &
-## # Kaspar, Roman (2022). Quality of Life and Well-being of Very Old People in
-## # NRW (Representative Survey NRW80+) Cross-Section Wave 1. GESIS, Cologne.
-## # ZA7558 Data file Version 2.0.0, https://doi.org/10.4232/1.13978.
-## 
-## # All source data and information to the data can be found in the subfolder
-## # "source".
-## 
-## # unzip the ZA7558_v2-0-0.dta.zip and save it in data
-## unzip("source/ZA7558_v2-0-0.dta.zip", exdir = "data/.")
-## 
-## # read in the data
-## dfdta <- read_dta("data/ZA7558_v2-0-0.dta")
-## dfsav <- read_sav("source/ZA7558_v2-0-0.sav")
-## 
-## # check if both formats provide the same data
-## all.equal(dfdta, dfsav)
-## 
-## # --> this is NOT the case. The labels and missings are treated differently.
-## 
-## # save the environment
-## save.image(file="data/gesis.RData")
-## 
-
-
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 getwd()
-load("data/gesis.RData")
-
+load("../data/gesis.RData")
 df <- dfdta |>
   select(starts_with("alter"), 
          ALT_agegroup, 
@@ -94,7 +52,7 @@ df <- df |>
   mutate_all(~ set_label(., gsub("^Alternserleben: ", "", get_label(.))))
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl <- df |> 
   select(alterl1, 
          alterl2, 
@@ -115,21 +73,21 @@ df_alterl_un <- df_alterl |>
 summary(df_alterl)
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 table(df_alterl$alterl1)
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl |> 
   map(~ table(.))
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl |> 
   map(~ proportions(table(.)))
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl |> 
   tabyl(alterl1) 
 
@@ -137,13 +95,13 @@ df_alterl |>
   map(~ tabyl(.))
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl |> 
   map(~ frq(. , show.na = T))
 
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 summary(df)
 
 sumstat_alter <- df |> 
@@ -163,7 +121,7 @@ sumstat_alter <- df |>
 sumstat_alter
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 sumstat_alter_psych <- df |>
   select(starts_with("alterl")) |> 
   psych::describe() |> 
@@ -173,7 +131,7 @@ sumstat_alter_psych <- df |>
 sumstat_alter_psych
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 descriptives <- dfdta |>  
   # filter(alterl1 > 0) |> 
   group_by(geschlecht)  |> 
@@ -188,7 +146,7 @@ descriptives <- dfdta |>
 descriptives
 
 
-## ----tabrstatix, echo=TRUE--------------------------------------------------------------
+## ----tabrstatix, echo=TRUE------------------------------------------------------------------------------
 apa_table(
   sumstat_alter
   , caption = "Summary Statistics: Experience of Ageing."
@@ -197,7 +155,7 @@ apa_table(
   )
 
 
-## ----tabsumstatalterpsych, echo = TRUE--------------------------------------------------
+## ----tabsumstatalterpsych, echo = TRUE------------------------------------------------------------------
 apa_table(
   sumstat_alter_psych
   , caption = "Summary Statistics: Experience of Ageing (psych)"
@@ -206,7 +164,7 @@ apa_table(
 )
 
 
-## ----tabdescriptives, echo=TRUE---------------------------------------------------------
+## ----tabdescriptives, echo=TRUE-------------------------------------------------------------------------
 apa_table(
   descriptives
   , caption = "Experience of Ageing: Valuing Relationships and Other People 
@@ -215,7 +173,7 @@ apa_table(
 )
 
 
-## ----echo=TRUE--------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------
 df_alterl_balance <- df_alterl %>%
   rowwise() %>%
   mutate(has_negative = ifelse(any(c(across(alterl1:alterl10)) < 0), 1, 0)) |> 
@@ -224,7 +182,7 @@ df_alterl_balance <- df_alterl %>%
   as_tibble()
 
 
-## ----likertalterl1,  fig.cap="Experience of Ageing: Proportions of Answers (df_alterl)", echo=TRUE----
+## ----likertalterl1,  fig.cap="Experience of Ageing: Proportions of Answers (df_alterl)", echo=TRUE------
 gglikert(df_alterl, 
          exclude_fill_values = c("Weiß nicht", "Verweigert"),
          sort = "ascending"
@@ -251,11 +209,11 @@ gglikert_stacked(df_alterl_balance,
                  )
 
 
-## ----tabsumstatalterpsychbal, echo=TRUE-------------------------------------------------
+## ----tabsumstatalterpsychbal, echo=TRUE-----------------------------------------------------------------
 sumstat_alter_psych_bal <- df_alterl_balance |>
   psych::describe() |> 
   as_tibble(rownames="Question")  |> 
-  select(-skew, -kurtosis, -range, -vars) 
+  dplyr::select(-skew, -kurtosis, -range, -vars) 
 
 apa_table(
   sumstat_alter_psych_bal
@@ -265,7 +223,7 @@ apa_table(
 )
 
 
-## ----echo = TRUE, eval = FALSE----------------------------------------------------------
+## ----echo = TRUE, eval = FALSE--------------------------------------------------------------------------
 ## 
 ## ```{r tabrstatix, echo=TRUE}
 ## apa_table(
@@ -278,7 +236,7 @@ apa_table(
 ## 
 
 
-## ----echo=T, eval=F---------------------------------------------------------------------
+## ----echo=T, eval=F-------------------------------------------------------------------------------------
 ## # Remove the common prefix from all variables
 ## df <- df |>
 ##   mutate_all(~ set_label(., gsub("^Alternserleben: ", "", get_label(.))))

@@ -85,7 +85,8 @@ pacman::p_load(tinylabels,
                sjmisc,
                tidyverse, 
                MASS,
-               dplyr)
+               dplyr,
+               magick)
 
 sessionInfo()
 ```
@@ -387,6 +388,7 @@ apa_table(
 df <- df |> 
   mutate_all(~ set_label(., gsub("^Alternserleben: ", "", get_label(.))))
 ```
+
 
 
 \clearpage
