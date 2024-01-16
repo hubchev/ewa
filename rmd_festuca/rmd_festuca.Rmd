@@ -1,14 +1,16 @@
 ---
-title: 'Exercise: Two-way ANOVA in R'
+title: "Exercise: Two-way ANOVA in R"
 author: "Stephan Huber"
 date: "2024-01-16"
-output: 
+output:
   html_document:
     number_sections: true
 bibliography: lit.bib
 csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
-abstract: |
-  This is an exercise where data management with the `dplyr` functions `pivot_longer`, `rename`, and `bind_rows` is practiced. Moreover, I exemplify how an ANOVA analysis can be executed with R. Doing so I refer to the content of @Childs2021APS[chapter 27]. All data to this exercise can be found in @Huber2024Empirisch. 
+abstract: "This is an exercise where data management with the `dplyr` functions `pivot_longer`,
+  `rename`, and `bind_rows` is practiced. Moreover, I exemplify how an ANOVA analysis
+  can be executed with R. Doing so I refer to the content of @Childs2021APS[chapter
+  27]. All data to this exercise can be found in @Huber2024Empirisch. \n"
 ---
 
 # Read
@@ -18,6 +20,8 @@ Read @Childs2021APS: [27.2 Competition between Calluna and Festuca](https://dzch
 Our goal is to learn how to work with two-way ANOVA models in R, using an example from a plant competition experiment. The work flow is very similar to one-way ANOVA in R. We’ll start with the problem and the data, and then work through model fitting, evaluating assumptions, significance testing, and finally, presenting the results.
 
 # Set up the R session 
+
+Download and open the script that you find [here](https://raw.githubusercontent.com/hubchev/ewa/main/rmd_festuca/r_festuca.R). This script contains all the code that is shown below. The solutions to the exercises can be found [here](https://raw.githubusercontent.com/hubchev/ewa/main/rmd_festuca/r_festuca_solutions.R).
 
 ```{r, echo=TRUE}
 setwd("~/Dropbox/hsf/courses/ewa/ewa_all")
