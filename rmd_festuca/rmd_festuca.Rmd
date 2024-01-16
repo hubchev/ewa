@@ -5,7 +5,6 @@ date: "2024-01-16"
 output:
   html_document:
     number_sections: true
-    self_contained: false
 bibliography: lit.bib
 csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
 abstract: "This is an exercise where data management with the `dplyr` functions `pivot_longer`,
