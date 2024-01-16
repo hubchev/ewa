@@ -17,6 +17,10 @@ source("scripts/readin_GESIS.R")
 source("scripts/desc_age_perception.R")
 
 ###################################################
+# E
+rmarkdown::render("rmd_weight/explain_weighted_average.Rmd", "all")
+
+###################################################
 ## rmd_desc: "Descriptive Statistics of the NRW80+ Dataset"
 rmarkdown::render("rmd_desc/desc_NRW80.Rmd", "all")
 
