@@ -5,6 +5,7 @@ date: "2024-01-16"
 output:
   html_document:
     number_sections: true
+    self_contained: false
 bibliography: lit.bib
 csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
 abstract: "This is an exercise where data management with the `dplyr` functions `pivot_longer`,
@@ -23,7 +24,7 @@ Our goal is to learn how to work with two-way ANOVA models in R, using an exampl
 
 Download and open the script that you find [here](https://raw.githubusercontent.com/hubchev/ewa/main/rmd_festuca/r_festuca.R). This script contains all the code that is shown below. The solutions to the exercises can be found [here](https://raw.githubusercontent.com/hubchev/ewa/main/rmd_festuca/r_festuca_solutions.R).
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, message=FALSE}
 setwd("~/Dropbox/hsf/courses/ewa/ewa_all")
 
 rm(list = ls())
@@ -80,7 +81,7 @@ festuca
 ```
 
 
-# Descriptive Statistics
+# Descriptive statistics
 
 ```{r, echo=FALSE, message=FALSE}
 summary_stats <- festuca |> 
@@ -130,7 +131,7 @@ plot(festuca_model, which = 3, add.smooth = FALSE)
 ```
 
 
-# Interaction Diagram
+# Interaction diagram
 
 Can you use the function `interaction.plot` to create the following:
 ```{r echo=FALSE}
