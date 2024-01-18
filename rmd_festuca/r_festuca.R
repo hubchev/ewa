@@ -24,11 +24,13 @@ data_absent <- data.frame(
 )
 data_absent
 
+combined_data <- rbind(data_present, data_absent)
+combined_data
 
 ## ----echo=FALSE--------------------------------------------------------------------------------------------------------------------------------
 ?bind_rows
-
-
+df <- bind_rows(data_absent, data_present)
+df
 ## ----echo=FALSE--------------------------------------------------------------------------------------------------------------------------------
 
 

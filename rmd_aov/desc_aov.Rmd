@@ -38,6 +38,8 @@ footnotelist      : no
 classoption       : "doc"
 output            : papaja::apa6_pdf 
 toc               : yes
+header-includes   : 
+  \usepackage{times}
 ---
 
 

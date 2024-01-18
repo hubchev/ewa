@@ -33,12 +33,26 @@ data
 
 ## ----echo=FALSE--------------------------------------------------------------------------------------------------------------------------------
 festuca <- data %>%
-  pivot_longer(cols = starts_with("pH"), names_to = "pH", values_to = "Weight") |> 
+  pivot_longer(cols = starts_with("pH"), 
+               names_to = "pH", 
+               values_to = "Weight") |> 
   rename(Calluna = Condition) 
 
 
 ## ----echo=TRUE---------------------------------------------------------------------------------------------------------------------------------
 festuca
+
+## Creating/Saving the object named "data1"
+data1 <- 
+  festuca |> 
+  group_by(Calluna) |> 
+  mutate(mean_Calluna = mean(Weight)) |> 
+  ungroup() |> 
+  mutate(mean_overall = mean(Weight))
+data1
+
+## Using the data1 object after it's been saved above (WITHOUT an ungroup)
+data1 %>% 
 
 
 ## ----echo=FALSE, message=FALSE-----------------------------------------------------------------------------------------------------------------
@@ -158,6 +172,7 @@ ggplot(festuca_stats,
 
 
 ## ----echo=TRUE---------------------------------------------------------------------------------------------------------------------------------
+pdf("test.pdf")
 ggplot(festuca_stats, 
        aes(x = Calluna, y = Means, fill = pH,
            ymin = Means - SEs, ymax = Means + SEs)) +
@@ -167,4 +182,6 @@ ggplot(festuca_stats,
   geom_errorbar(position = position_dodge(0.9), width=.2) +
   # controlling the appearance
   xlab("Calluna") + ylab("Festuca yield (g dry weight)")
-
+ggsave("test2.pdf", device = pdf)
+ggsave("test2.pdf", width = 2, height = 9, device = pdf)
+dev.off()

@@ -213,6 +213,7 @@
 \setlength{\cfttabindent}{0pt}
 \setlength{\cftafterloftitleskip}{0pt}
 \settowidth{\cfttabnumwidth}{Table 10.\qquad}
+\usepackage{times}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -280,6 +281,30 @@ Figure \ref{fig:df3boxplot} shows boxplots for all combinations of variables of 
 \ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(pacman)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"pacman"}\NormalTok{)}
 \NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(tidyverse, janitor, psych, magick, }
 \NormalTok{               car, knitr, papaja, kableExtra, stargazer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in utils::install.packages(package, ...): installation of package
+## 'magick' had non-zero exit status
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in p_install(package, character.only = TRUE, ...):
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called 'magick'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in pacman::p_load(tidyverse, janitor, psych, magick, car, knitr, : Failed to install/load:
+## magick
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{rm}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
 
 \NormalTok{ModKogDat }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"../data/ModKogDat.csv"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep=}\StringTok{","}\NormalTok{) }
@@ -447,11 +472,11 @@ a2\_b3 & 5 & 30.00 & 6.71 & 0.22 & 21 & 27.00 & 30 & 33.00 & 39\\
 
 \begin{tabular}{lllllll}
 \toprule
-Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$\mathit{MSE}$} & \multicolumn{1}{c}{$p$}\\
+Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{90\% CI} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Modus & .665 & 47.65 & 1 & 24 & 22.67 & < .001\\
-Kognition & .249 & 3.97 & 2 & 24 & 22.67 & .032\\
-Modus $\times$ Kognition & .323 & 5.74 & 2 & 24 & 22.67 & .009\\
+Modus & .665 & {}[.462, .778] & 47.65 & 1 & 24 & < .001\\
+Kognition & .249 & {}[.014, .450] & 3.97 & 2 & 24 & .032\\
+Modus $\times$ Kognition & .323 & {}[.062, .517] & 5.74 & 2 & 24 & .009\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -483,15 +508,15 @@ Modus $\times$ Kognition & .323 & 5.74 & 2 & 24 & 22.67 & .009\\
 
 \begin{tabular}{lllllll}
 \toprule
-Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$\mathit{MSE}$} & \multicolumn{1}{c}{$p$}\\
+Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{90\% CI} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Modus & .665 & 47.65 & 1 & 24 & 22.67 & < .001\\
-Kognition & .249 & 3.97 & 2 & 24 & 22.67 & .032\\
-Kognition $\times$  altersadäquat vs beeinträchtigt & .199 & 5.96 & 1 & 24 & 22.67 & .022\\
-Kognition $\times$  LKB vs beginnende Demenz & .076 & 1.99 & 1 & 24 & 22.67 & .172\\
-Modus $\times$ Kognition & .323 & 5.74 & 2 & 24 & 22.67 & .009\\
-Modus $\times$ Kognition $\times$  altersadäquat vs beeinträchtigt & .199 & 5.96 & 1 & 24 & 22.67 & .022\\
-Modus $\times$ Kognition $\times$  LKB vs beginnende Demenz & .187 & 5.51 & 1 & 24 & 22.67 & .027\\
+Modus & .665 & {}[.462, .778] & 47.65 & 1 & 24 & < .001\\
+Kognition & .249 & {}[.014, .450] & 3.97 & 2 & 24 & .032\\
+Kognition $\times$  altersadäquat vs beeinträchtigt & .199 & {}[.018, .419] & 5.96 & 1 & 24 & .022\\
+Kognition $\times$  LKB vs beginnende Demenz & .076 & {}[.000, .282] & 1.99 & 1 & 24 & .172\\
+Modus $\times$ Kognition & .323 & {}[.062, .517] & 5.74 & 2 & 24 & .009\\
+Modus $\times$ Kognition $\times$  altersadäquat vs beeinträchtigt & .199 & {}[.018, .419] & 5.96 & 1 & 24 & .022\\
+Modus $\times$ Kognition $\times$  LKB vs beginnende Demenz & .187 & {}[.013, .407] & 5.51 & 1 & 24 & .027\\
 \bottomrule
 \addlinespace
 \end{tabular}
@@ -688,15 +713,15 @@ te\_lk\_pr & 5 & 20.00 & 4.24 & 0.21 & 14 & 20.00 & 20 & 20.00 & 26\\
 
 \begin{tabular}{lllllll}
 \toprule
-Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$\mathit{MSE}$} & \multicolumn{1}{c}{$p$}\\
+Effect & \multicolumn{1}{c}{$\hat{\eta}^2_G$} & \multicolumn{1}{c}{90\% CI} & \multicolumn{1}{c}{$F$} & \multicolumn{1}{c}{$\mathit{df}$} & \multicolumn{1}{c}{$\mathit{df}_{\mathrm{res}}$} & \multicolumn{1}{c}{$p$}\\
 \midrule
-Modus & .665 & 95.29 & 1 & 48 & 22.67 & < .001\\
-Kognition & .249 & 7.94 & 2 & 48 & 22.67 & .001\\
-Interviewer & .000 & 0.00 & 1 & 48 & 22.67 & > .999\\
-Modus $\times$ Kognition & .323 & 11.47 & 2 & 48 & 22.67 & < .001\\
-Modus $\times$ Interviewer & .000 & 0.00 & 1 & 48 & 22.67 & > .999\\
-Kognition $\times$ Interviewer & .000 & 0.00 & 2 & 48 & 22.67 & > .999\\
-Modus $\times$ Kognition $\times$ Interviewer & .000 & 0.00 & 2 & 48 & 22.67 & > .999\\
+Modus & .665 & {}[.533, .751] & 95.29 & 1 & 48 & < .001\\
+Kognition & .249 & {}[.077, .398] & 7.94 & 2 & 48 & .001\\
+Interviewer & .000 & {}[.000, .000] & 0.00 & 1 & 48 & > .999\\
+Modus $\times$ Kognition & .323 & {}[.140, .469] & 11.47 & 2 & 48 & < .001\\
+Modus $\times$ Interviewer & .000 & {}[.000, .000] & 0.00 & 1 & 48 & > .999\\
+Kognition $\times$ Interviewer & .000 & {}[.000, .000] & 0.00 & 2 & 48 & > .999\\
+Modus $\times$ Kognition $\times$ Interviewer & .000 & {}[.000, .000] & 0.00 & 2 & 48 & > .999\\
 \bottomrule
 \addlinespace
 \end{tabular}
