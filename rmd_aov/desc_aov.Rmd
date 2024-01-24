@@ -36,10 +36,11 @@ tablelist         : yes
 footnotelist      : no
 
 classoption       : "doc"
-output            : papaja::apa6_pdf 
+output            : papaja::apa6_pdf
 toc               : yes
-header-includes   : 
-  \usepackage{times}
+header-includes:
+  - \usepackage{times}
+  - \babelprovide[main,import]{ngerman}
 ---
 
 
@@ -47,6 +48,12 @@ header-includes   :
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+
+
+de_terms <- getOption("papaja.terms")
+de_terms$note <- "Anmerkungen"
+options("papaja.terms" = de_terms) 
+
 # rm(list = ls())
 ```
 

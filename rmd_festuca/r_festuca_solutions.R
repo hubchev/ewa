@@ -52,7 +52,7 @@ data1 <-
 data1
 
 ## Using the data1 object after it's been saved above (WITHOUT an ungroup)
-data1 %>% 
+# data1 %>% 
 
 
 ## ----echo=FALSE, message=FALSE-----------------------------------------------------------------------------------------------------------------

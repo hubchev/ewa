@@ -214,6 +214,7 @@
 \setlength{\cftafterloftitleskip}{0pt}
 \settowidth{\cfttabnumwidth}{Table 10.\qquad}
 \usepackage{times}
+\babelprovide[main,import]{ngerman}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -281,30 +282,6 @@ Figure \ref{fig:df3boxplot} shows boxplots for all combinations of variables of 
 \ControlFlowTok{if}\NormalTok{ (}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(pacman)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"pacman"}\NormalTok{)}
 \NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(tidyverse, janitor, psych, magick, }
 \NormalTok{               car, knitr, papaja, kableExtra, stargazer)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Warning in utils::install.packages(package, ...): installation of package
-## 'magick' had non-zero exit status
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in p_install(package, character.only = TRUE, ...):
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called 'magick'
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in pacman::p_load(tidyverse, janitor, psych, magick, car, knitr, : Failed to install/load:
-## magick
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{rm}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
 
 \NormalTok{ModKogDat }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"../data/ModKogDat.csv"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep=}\StringTok{","}\NormalTok{) }
@@ -402,7 +379,7 @@ id* & 30.00 & 3.50 & 1.74 & 3.50 & 1.00 & 6.00 & 0.32\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} This table contains all variables.}
+\normalsize{\textit{Anmerkungen.} This table contains all variables.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -432,7 +409,7 @@ a2\_b3 & 5 & 30.00 & 6.71 & 0.22 & 21 & 27.00 & 30 & 33.00 & 39\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} This table contains summary statistics for each combination of `modus` and `kognition`}
+\normalsize{\textit{Anmerkungen.} This table contains summary statistics for each combination of `modus` and `kognition`}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -482,7 +459,7 @@ Modus $\times$ Kognition & .323 & {}[.062, .517] & 5.74 & 2 & 24 & .009\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} Bli bla blubb.}
+\normalsize{\textit{Anmerkungen.} Bli bla blubb.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -522,7 +499,7 @@ Modus $\times$ Kognition $\times$  LKB vs beginnende Demenz & .187 & {}[.013, .4
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} Bli bla blubb.}
+\normalsize{\textit{Anmerkungen.} Bli bla blubb.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -654,7 +631,7 @@ id* & 30.00 & 3.50 & 1.74 & 3.50 & 1.00 & 6.00 & 0.32\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} This table contains all variables.}
+\normalsize{\textit{Anmerkungen.} This table contains all variables.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -690,7 +667,7 @@ te\_lk\_pr & 5 & 20.00 & 4.24 & 0.21 & 14 & 20.00 & 20 & 20.00 & 26\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} This table contains summary statistics for each combination of `modus`,  `kognition`, and `interviewer`}
+\normalsize{\textit{Anmerkungen.} This table contains summary statistics for each combination of `modus`,  `kognition`, and `interviewer`}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -727,7 +704,7 @@ Modus $\times$ Kognition $\times$ Interviewer & .000 & {}[.000, .000] & 0.00 & 2
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} Bli bla blubb.}
+\normalsize{\textit{Anmerkungen.} Bli bla blubb.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -801,7 +778,7 @@ id* & 60.00 & 6.50 & 3.48 & 6.50 & 1.00 & 12.00 & 0.45\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} This table contains all variables.}
+\normalsize{\textit{Anmerkungen.} This table contains all variables.}
 \end{tablenotes}
 
 \end{threeparttable}

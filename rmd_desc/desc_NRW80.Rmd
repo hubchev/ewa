@@ -53,7 +53,6 @@ toc               : yes
 ```{r analysis-preferences}
 # Seed for random number generation
 set.seed(42)
-knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 # rm(list = ls())
 ```
 
@@ -138,6 +137,8 @@ df_alterl <- df |>
 # to remove unused labels you can use drop_unused_labels():
 df_alterl_un <- df_alterl |>
   drop_unused_labels()
+
+
 
 summary(df_alterl)
 ```

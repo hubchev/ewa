@@ -294,62 +294,64 @@ In the following, I load (and install) packages that I use later on and I show i
 \end{Shaded}
 
 \begin{verbatim}
-## R version 4.3.2 (2023-10-31)
+## R version 4.2.2 Patched (2022-11-10 r83330)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Debian GNU/Linux 12 (bookworm)
 ## 
 ## Matrix products: default
-## BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
-## LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.21.so;  LAPACK version 3.11.0
+## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.11.0
+## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.11.0
 ## 
 ## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       
-##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              
-## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-## 
-## time zone: Europe/Berlin
-## tzcode source: system (glibc)
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
-## [1] grid      stats     graphics  grDevices utils     datasets  methods   base     
+## [1] grid      stats     graphics  grDevices utils     datasets  methods  
+## [8] base     
 ## 
 ## other attached packages:
-##  [1] magick_2.8.2        lubridate_1.9.3     forcats_1.0.0       stringr_1.5.1       dplyr_1.1.4        
-##  [6] purrr_1.0.2         readr_2.1.5         tibble_3.2.1        tidyverse_2.0.0     sjmisc_2.8.9       
-## [11] sjlabelled_1.2.0    psych_2.3.12        ggstats_0.5.1       tidyr_1.3.0         expss_0.11.6       
-## [16] maditr_0.8.4        likert_1.3.5        xtable_1.8-4        ggplot2_3.4.4       HH_3.1-49          
-## [21] gridExtra_2.3       multcomp_1.4-25     TH.data_1.1-2       MASS_7.3-60         survival_3.5-7     
-## [26] mvtnorm_1.2-4       latticeExtra_0.6-30 lattice_0.22-5      rstatix_0.7.2       skimr_2.1.5        
-## [31] janitor_2.2.0       labelled_2.12.0     haven_2.5.4         papaja_0.1.2        tinylabels_0.2.4   
-## [36] pacman_0.5.1       
+##  [1] magick_2.8.2        lubridate_1.9.3     forcats_1.0.0      
+##  [4] stringr_1.5.1       dplyr_1.1.4         purrr_1.0.2        
+##  [7] readr_2.1.4         tibble_3.2.1        tidyverse_2.0.0    
+## [10] sjmisc_2.8.9        sjlabelled_1.2.0    psych_2.3.12       
+## [13] ggstats_0.5.1       tidyr_1.3.0         expss_0.11.6       
+## [16] maditr_0.8.3        likert_1.3.5        xtable_1.8-4       
+## [19] ggplot2_3.4.4       HH_3.1-49           gridExtra_2.3      
+## [22] multcomp_1.4-25     TH.data_1.1-2       MASS_7.3-60        
+## [25] survival_3.5-7      mvtnorm_1.2-4       latticeExtra_0.6-30
+## [28] lattice_0.22-5      rstatix_0.7.2       skimr_2.1.5        
+## [31] janitor_2.2.0       labelled_2.12.0     haven_2.5.4        
+## [34] papaja_0.1.2        tinylabels_0.2.4    pacman_0.5.1       
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] matrixStats_1.2.0    httr_1.4.7           webshot_0.5.5        RColorBrewer_1.1-3  
-##  [5] insight_0.19.7       repr_1.1.6           tools_4.3.2          backports_1.4.1     
-##  [9] utf8_1.2.4           R6_2.5.1             withr_2.5.2          cli_3.6.2           
-## [13] sandwich_3.1-0       labeling_0.4.3       systemfonts_1.0.5    foreign_0.8-85      
-## [17] svglite_2.1.3        rstudioapi_0.15.0    generics_0.1.3       car_3.1-2           
-## [21] leaps_3.1            Matrix_1.6-4         interp_1.1-5         fansi_1.0.6         
-## [25] abind_1.4-5          lifecycle_1.0.4      yaml_2.3.8           snakecase_0.11.1    
-## [29] carData_3.0-5        promises_1.2.1       crayon_1.5.2         pillar_1.9.0        
-## [33] knitr_1.45           codetools_0.2-19     glue_1.7.0           data.table_1.14.10  
-## [37] broom.helpers_1.14.0 vcd_1.4-12           vctrs_0.6.5          png_0.1-8           
-## [41] gtable_0.3.1         assertthat_0.2.1     xfun_0.41            mime_0.12           
-## [45] tinytex_0.49         gmp_0.7-3            ellipsis_0.3.2       nlme_3.1-163        
-## [49] rpart_4.1.21         colorspace_2.1-0     Hmisc_5.1-1          nnet_7.3-19         
-## [53] mnormt_2.1.1         tidyselect_1.2.0     compiler_4.3.2       rvest_1.0.3         
-## [57] htmlTable_2.4.2      xml2_1.3.5           bookdown_0.32        checkmate_2.3.1     
-## [61] scales_1.3.0         lmtest_0.9-40        digest_0.6.34        rmarkdown_2.25      
-## [65] htmltools_0.5.7      pkgconfig_2.0.3      jpeg_0.1-10          base64enc_0.1-3     
-## [69] highr_0.10           fastmap_1.1.1        rlang_1.1.3          htmlwidgets_1.6.1   
-## [73] shiny_1.8.0          farver_2.1.1         zoo_1.8-12           jsonlite_1.8.8      
-## [77] magrittr_2.0.3       Formula_1.2-5        munsell_0.5.0        Rcpp_1.0.12         
-## [81] stringi_1.8.3        plyr_1.8.9           parallel_4.3.2       deldir_2.0-2        
-## [85] splines_4.3.2        hms_1.1.3            rmdfiltr_0.1.3       reshape2_1.4.4      
-## [89] evaluate_0.23        tzdb_0.4.0           httpuv_1.6.13        broom_1.0.5         
-## [93] Rmpfr_0.9-4          later_1.3.2          viridisLite_0.4.2    cluster_2.1.6       
-## [97] timechange_0.2.0
+##  [1] colorspace_2.1-0   deldir_2.0-2       ellipsis_0.3.2     estimability_1.4.1
+##  [5] snakecase_0.11.1   htmlTable_2.4.2    parameters_0.21.3  base64enc_0.1-3   
+##  [9] rstudioapi_0.15.0  fansi_1.0.6        codetools_0.2-19   splines_4.2.2     
+## [13] leaps_3.1          mnormt_2.1.1       knitr_1.45         Formula_1.2-5     
+## [17] jsonlite_1.8.8     broom_1.0.5        cluster_2.1.6      Rmpfr_0.9-4       
+## [21] png_0.1-8          effectsize_0.8.6   shiny_1.8.0        compiler_4.2.2    
+## [25] emmeans_1.9.0      backports_1.4.1    Matrix_1.6-4       fastmap_1.1.1     
+## [29] cli_3.6.2          later_1.3.2        htmltools_0.5.7    tools_4.2.2       
+## [33] gmp_0.7-3          coda_0.19-4        gtable_0.3.4       glue_1.6.2        
+## [37] reshape2_1.4.4     Rcpp_1.0.11        carData_3.0-5      vctrs_0.6.5       
+## [41] nlme_3.1-164       lmtest_0.9-40      insight_0.19.7     xfun_0.41         
+## [45] timechange_0.2.0   mime_0.12          lifecycle_1.0.4    zoo_1.8-12        
+## [49] scales_1.3.0       hms_1.1.3          promises_1.2.1     parallel_4.2.2    
+## [53] sandwich_3.1-0     RColorBrewer_1.1-3 yaml_2.3.8         rpart_4.1.23      
+## [57] stringi_1.8.3      bayestestR_0.13.1  checkmate_2.3.1    repr_1.1.6        
+## [61] matrixStats_1.2.0  rlang_1.1.2        pkgconfig_2.0.3    evaluate_0.23     
+## [65] htmlwidgets_1.6.4  tidyselect_1.2.0   plyr_1.8.9         magrittr_2.0.3    
+## [69] bookdown_0.37      R6_2.5.1           generics_0.1.3     Hmisc_5.1-1       
+## [73] pillar_1.9.0       foreign_0.8-86     withr_2.5.2        datawizard_0.9.1  
+## [77] abind_1.4-5        nnet_7.3-19        car_3.1-2          interp_1.1-5      
+## [81] utf8_1.2.4         tzdb_0.4.0         rmarkdown_2.25     jpeg_0.1-10       
+## [85] data.table_1.14.10 vcd_1.4-12         digest_0.6.33      httpuv_1.6.13     
+## [89] munsell_0.5.0
 \end{verbatim}
 
 \hypertarget{import-data}{%
@@ -420,20 +422,27 @@ For simplification, let us focus on the questions that refer to the ``Experience
 \end{Shaded}
 
 \begin{verbatim}
-##     alterl1          alterl2          alterl3          alterl4          alterl5         alterl6      
-##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.00   Min.   :-2.000  
-##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 2.00   1st Qu.: 2.000  
-##  Median : 3.000   Median : 4.000   Median : 2.000   Median : 3.000   Median : 3.00   Median : 4.000  
-##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mean   : 2.763   Mean   : 2.99   Mean   : 3.405  
-##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 4.000   3rd Qu.: 4.00   3rd Qu.: 5.000  
-##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.00   Max.   : 5.000  
-##     alterl7          alterl8          alterl9          alterl10     
+##     alterl1          alterl2          alterl3          alterl4      
 ##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000  
-##  1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000  
-##  Median : 3.000   Median : 3.000   Median : 3.000   Median : 2.000  
-##  Mean   : 3.237   Mean   : 2.712   Mean   : 2.969   Mean   : 2.305  
-##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000  
-##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000
+##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000  
+##  Median : 3.000   Median : 4.000   Median : 2.000   Median : 3.000  
+##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mean   : 2.763  
+##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 4.000  
+##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000  
+##     alterl5         alterl6          alterl7          alterl8      
+##  Min.   :-2.00   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000  
+##  1st Qu.: 2.00   1st Qu.: 2.000   1st Qu.: 2.000   1st Qu.: 1.000  
+##  Median : 3.00   Median : 4.000   Median : 3.000   Median : 3.000  
+##  Mean   : 2.99   Mean   : 3.405   Mean   : 3.237   Mean   : 2.712  
+##  3rd Qu.: 4.00   3rd Qu.: 5.000   3rd Qu.: 4.000   3rd Qu.: 4.000  
+##  Max.   : 5.00   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000  
+##     alterl9          alterl10     
+##  Min.   :-2.000   Min.   :-2.000  
+##  1st Qu.: 2.000   1st Qu.: 1.000  
+##  Median : 3.000   Median : 2.000  
+##  Mean   : 2.969   Mean   : 2.305  
+##  3rd Qu.: 4.000   3rd Qu.: 3.000  
+##  Max.   : 5.000   Max.   : 5.000
 \end{verbatim}
 
 \hypertarget{get-an-overview-by-counting}{%
@@ -529,53 +538,73 @@ Using \texttt{proportions()} returns the conditional proportions:
 \begin{verbatim}
 ## $alterl1
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.042941492 0.003220612 0.209339775 0.142780462 0.242082662 0.274288782 0.085346216 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.042941492 0.003220612 0.209339775 0.142780462 0.242082662 0.274288782 
+##  Sehr stark 
+## 0.085346216 
 ## 
 ## $alterl2
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.019323671 0.002147075 0.105206656 0.131508320 0.203435319 0.347826087 0.190552872 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.019323671 0.002147075 0.105206656 0.131508320 0.203435319 0.347826087 
+##  Sehr stark 
+## 0.190552872 
 ## 
 ## $alterl3
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.010735373 0.001610306 0.268384326 0.309715513 0.216317767 0.130971551 0.062265164 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.010735373 0.001610306 0.268384326 0.309715513 0.216317767 0.130971551 
+##  Sehr stark 
+## 0.062265164 
 ## 
 ## $alterl4
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.065485776 0.004294149 0.119162641 0.139559850 0.282877080 0.291465378 0.097155126 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.065485776 0.004294149 0.119162641 0.139559850 0.282877080 0.291465378 
+##  Sehr stark 
+## 0.097155126 
 ## 
 ## $alterl5
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.054213634 0.002147075 0.106816962 0.113258186 0.242619431 0.365002684 0.115942029 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.054213634 0.002147075 0.106816962 0.113258186 0.242619431 0.365002684 
+##  Sehr stark 
+## 0.115942029 
 ## 
 ## $alterl6
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.010198604 0.001610306 0.079978529 0.173913043 0.192163178 0.288244767 0.253891573 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.010198604 0.001610306 0.079978529 0.173913043 0.192163178 0.288244767 
+##  Sehr stark 
+## 0.253891573 
 ## 
 ## $alterl7
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.010735373 0.001073537 0.077831455 0.194310252 0.252818035 0.281803543 0.181427805 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.010735373 0.001073537 0.077831455 0.194310252 0.252818035 0.281803543 
+##  Sehr stark 
+## 0.181427805 
 ## 
 ## $alterl8
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.010735373 0.001610306 0.276972625 0.187869028 0.174449812 0.182501342 0.165861514 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.010735373 0.001610306 0.276972625 0.187869028 0.174449812 0.182501342 
+##  Sehr stark 
+## 0.165861514 
 ## 
 ## $alterl9
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.044551798 0.005367687 0.140096618 0.122383253 0.228126677 0.302737520 0.156736447 
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.044551798 0.005367687 0.140096618 0.122383253 0.228126677 0.302737520 
+##  Sehr stark 
+## 0.156736447 
 ## 
 ## $alterl10
 ## .
-##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark  Sehr stark 
-## 0.023617821 0.003757381 0.288244767 0.232420827 0.260869565 0.134728932 0.056360709
+##  Weiß nicht  Verweigert   Gar nicht   Ein wenig       Mäßig       Stark 
+## 0.023617821 0.003757381 0.288244767 0.232420827 0.260869565 0.134728932 
+##  Sehr stark 
+## 0.056360709
 \end{verbatim}
 
 \hypertarget{tabyl-of-janitor}{%
@@ -911,37 +940,53 @@ First, I am interested in the class of the data and some very basic summary stat
 \end{Shaded}
 
 \begin{verbatim}
-##     alterl1          alterl2          alterl3          alterl4          alterl5         alterl6      
-##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.00   Min.   :-2.000  
-##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 2.00   1st Qu.: 2.000  
-##  Median : 3.000   Median : 4.000   Median : 2.000   Median : 3.000   Median : 3.00   Median : 4.000  
-##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mean   : 2.763   Mean   : 2.99   Mean   : 3.405  
-##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 4.000   3rd Qu.: 4.00   3rd Qu.: 5.000  
-##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.00   Max.   : 5.000  
-##                                                                                                      
-##     alterl7          alterl8          alterl9          alterl10        alter_int        alter_cont    
-##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   : 80.00   Min.   : 80.11  
-##  1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 82.00   1st Qu.: 82.99  
-##  Median : 3.000   Median : 3.000   Median : 3.000   Median : 2.000   Median : 86.00   Median : 86.59  
-##  Mean   : 3.237   Mean   : 2.712   Mean   : 2.969   Mean   : 2.305   Mean   : 86.48   Mean   : 86.98  
-##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 90.00   3rd Qu.: 90.56  
-##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   :102.00   Max.   :102.92  
-##                                                                      NA's   :6        NA's   :6       
-##    alterl_m1       alterl_m2         alterp        ALT_agegroup      ALT_sex          famst1      
-##  Min.   :1.000   Min.   :1.000   Min.   :-4.000   Min.   :1.000   Min.   :1.000   Min.   :-1.000  
-##  1st Qu.:2.600   1st Qu.:2.200   1st Qu.:-4.000   1st Qu.:1.000   1st Qu.:1.000   1st Qu.: 1.000  
-##  Median :3.200   Median :2.800   Median :-4.000   Median :2.000   Median :2.000   Median : 4.000  
-##  Mean   :3.168   Mean   :2.877   Mean   : 2.632   Mean   :1.883   Mean   :1.502   Mean   : 2.765  
-##  3rd Qu.:3.800   3rd Qu.:3.600   3rd Qu.:-4.000   3rd Qu.:3.000   3rd Qu.:2.000   3rd Qu.: 4.000  
-##  Max.   :5.000   Max.   :5.000   Max.   :99.000   Max.   :3.000   Max.   :2.000   Max.   : 5.000  
-##  NA's   :16      NA's   :14                                                                       
-##      famst7        demtectcorr         kogstat          final         geschlecht   
-##  Min.   :-3.000   Min.   :-11.000   Min.   :-4.00   Min.   :81.00   Min.   :1.000  
-##  1st Qu.:-3.000   1st Qu.: -1.000   1st Qu.:-4.00   1st Qu.:81.00   1st Qu.:1.000  
-##  Median : 0.000   Median :  0.000   Median :-4.00   Median :81.00   Median :2.000  
-##  Mean   :-1.179   Mean   : -1.742   Mean   :-3.21   Mean   :81.09   Mean   :1.502  
-##  3rd Qu.: 0.000   3rd Qu.:  0.000   3rd Qu.:-4.00   3rd Qu.:81.00   3rd Qu.:2.000  
-##  Max.   : 1.000   Max.   :  2.000   Max.   : 7.00   Max.   :82.00   Max.   :2.000  
+##     alterl1          alterl2          alterl3          alterl4      
+##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000  
+##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000  
+##  Median : 3.000   Median : 4.000   Median : 2.000   Median : 3.000  
+##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mean   : 2.763  
+##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 4.000  
+##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000  
+##                                                                     
+##     alterl5         alterl6          alterl7          alterl8      
+##  Min.   :-2.00   Min.   :-2.000   Min.   :-2.000   Min.   :-2.000  
+##  1st Qu.: 2.00   1st Qu.: 2.000   1st Qu.: 2.000   1st Qu.: 1.000  
+##  Median : 3.00   Median : 4.000   Median : 3.000   Median : 3.000  
+##  Mean   : 2.99   Mean   : 3.405   Mean   : 3.237   Mean   : 2.712  
+##  3rd Qu.: 4.00   3rd Qu.: 5.000   3rd Qu.: 4.000   3rd Qu.: 4.000  
+##  Max.   : 5.00   Max.   : 5.000   Max.   : 5.000   Max.   : 5.000  
+##                                                                    
+##     alterl9          alterl10        alter_int        alter_cont    
+##  Min.   :-2.000   Min.   :-2.000   Min.   : 80.00   Min.   : 80.11  
+##  1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 82.00   1st Qu.: 82.99  
+##  Median : 3.000   Median : 2.000   Median : 86.00   Median : 86.59  
+##  Mean   : 2.969   Mean   : 2.305   Mean   : 86.48   Mean   : 86.98  
+##  3rd Qu.: 4.000   3rd Qu.: 3.000   3rd Qu.: 90.00   3rd Qu.: 90.56  
+##  Max.   : 5.000   Max.   : 5.000   Max.   :102.00   Max.   :102.92  
+##                                    NA's   :6        NA's   :6       
+##    alterl_m1       alterl_m2         alterp        ALT_agegroup  
+##  Min.   :1.000   Min.   :1.000   Min.   :-4.000   Min.   :1.000  
+##  1st Qu.:2.600   1st Qu.:2.200   1st Qu.:-4.000   1st Qu.:1.000  
+##  Median :3.200   Median :2.800   Median :-4.000   Median :2.000  
+##  Mean   :3.168   Mean   :2.877   Mean   : 2.632   Mean   :1.883  
+##  3rd Qu.:3.800   3rd Qu.:3.600   3rd Qu.:-4.000   3rd Qu.:3.000  
+##  Max.   :5.000   Max.   :5.000   Max.   :99.000   Max.   :3.000  
+##  NA's   :16      NA's   :14                                      
+##     ALT_sex          famst1           famst7        demtectcorr     
+##  Min.   :1.000   Min.   :-1.000   Min.   :-3.000   Min.   :-11.000  
+##  1st Qu.:1.000   1st Qu.: 1.000   1st Qu.:-3.000   1st Qu.: -1.000  
+##  Median :2.000   Median : 4.000   Median : 0.000   Median :  0.000  
+##  Mean   :1.502   Mean   : 2.765   Mean   :-1.179   Mean   : -1.742  
+##  3rd Qu.:2.000   3rd Qu.: 4.000   3rd Qu.: 0.000   3rd Qu.:  0.000  
+##  Max.   :2.000   Max.   : 5.000   Max.   : 1.000   Max.   :  2.000  
+##                                                                     
+##     kogstat          final         geschlecht   
+##  Min.   :-4.00   Min.   :81.00   Min.   :1.000  
+##  1st Qu.:-4.00   1st Qu.:81.00   1st Qu.:1.000  
+##  Median :-4.00   Median :81.00   Median :2.000  
+##  Mean   :-3.21   Mean   :81.09   Mean   :1.502  
+##  3rd Qu.:-4.00   3rd Qu.:81.00   3rd Qu.:2.000  
+##  Max.   : 7.00   Max.   :82.00   Max.   :2.000  
 ## 
 \end{verbatim}
 
@@ -964,7 +1009,8 @@ First, I am interested in the class of the data and some very basic summary stat
 \end{Shaded}
 
 \begin{verbatim}
-## Warning: attributes are not identical across measure variables; they will be dropped
+## Warning: attributes are not identical across measure variables; they will be
+## dropped
 \end{verbatim}
 
 \begin{Shaded}

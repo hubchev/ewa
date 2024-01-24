@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.1.10)  12 JAN 2024 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.11.30)  22 JAN 2024 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -349,7 +349,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 Package: babel 2022/12/26 3.84 The Babel package
 \babel@savecnt=\count291
 \U@D=\dimen188
-\l@unhyphenated=\language87
+\l@unhyphenated=\language14
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count292
@@ -357,7 +357,7 @@ Package babel Info: You haven't specified a language as a class or package
 (babel)             option. I'll load 'nil'. Reported on input line 4406.
 (/usr/share/texlive/texmf-dist/tex/generic/babel/nil.ldf
 Language: nil 2022/12/26 3.84 Nil language
-\l@nil=\language88
+\l@nil=\language15
 ))
 \everypar=\toks26
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
@@ -784,771 +784,320 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 268.
-
-Overfull \hbox (147.00209pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libo
-penblasp-r0.3.21.so;  LAPACK version 3.11.0[] 
- []
-
-
-Overfull \hbox (32.02742pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C           
-    LC_TIME=en_US.UTF-8[] 
- []
-
-
-Overfull \hbox (55.02235pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8
-    LC_MESSAGES=en_US.UTF-8[] 
- []
-
 [2]
-Overfull \hbox (32.02742pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UT
-F-8 LC_IDENTIFICATION=C[] 
+Overfull \hbox (43.52489pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ##  [1] colorspace_2.1-0   deldir_2.0-2       ellipsis_0.3
+.2     estimability_1.4.1[] 
  []
 
 
-Overfull \hbox (32.02742pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [1] grid      stats     graphics  grDevices utils     d
-atasets  methods   base[] 
+Overfull \hbox (26.27869pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ##  [5] snakecase_0.11.1   htmlTable_2.4.2    parameters_0
+.21.3  base64enc_0.1-3[] 
  []
 
 
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [1] magick_2.8.2        lubridate_1.9.3     forcats_1.
-0.0       stringr_1.5.1       dplyr_1.1.4[] 
+Overfull \hbox (14.78122pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ##  [9] rstudioapi_0.15.0  fansi_1.0.6        codetools_0.
+2-19   splines_4.2.2[] 
  []
 
 
-Overfull \hbox (141.25336pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [6] purrr_1.0.2         readr_2.1.5         tibble_3.2
-.1        tidyverse_2.0.0     sjmisc_2.8.9[] 
+Overfull \hbox (14.78122pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [13] leaps_3.1          mnormt_2.1.1       knitr_1.45  
+       Formula_1.2-5[] 
  []
 
 
-Overfull \hbox (141.25336pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [11] sjlabelled_1.2.0    psych_2.3.12        ggstats_0.
-5.1       tidyr_1.3.0         expss_0.11.6[] 
+Overfull \hbox (3.28375pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [17] jsonlite_1.8.8     broom_1.0.5        cluster_2.1.
+6      Rmpfr_0.9-4[] 
  []
 
 
-Overfull \hbox (124.00716pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [16] maditr_0.8.4        likert_1.3.5        xtable_1.8
--4        ggplot2_3.4.4       HH_3.1-49[] 
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [21] png_0.1-8          effectsize_0.8.6   shiny_1.8.0 
+       compiler_4.2.2[] 
  []
 
 
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [21] gridExtra_2.3       multcomp_1.4-25     TH.data_1.
-1-2       MASS_7.3-60         survival_3.5-7[] 
+Overfull \hbox (14.78122pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [25] emmeans_1.9.0      backports_1.4.1    Matrix_1.6-4
+       fastmap_1.1.1[] 
  []
 
 
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [26] mvtnorm_1.2-4       latticeExtra_0.6-30 lattice_0.
-22-5      rstatix_0.7.2       skimr_2.1.5[] 
+Overfull \hbox (3.28375pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [29] cli_3.6.2          later_1.3.2        htmltools_0.
+5.7    tools_4.2.2[] 
  []
 
 
-Overfull \hbox (164.24829pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [31] janitor_2.2.0       labelled_2.12.0     haven_2.5.
-4         papaja_0.1.2        tinylabels_0.2.4[] 
+Overfull \hbox (3.28375pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [37] reshape2_1.4.4     Rcpp_1.0.11        carData_3.0-
+5      vctrs_0.6.5[] 
  []
 
 
-Overfull \hbox (78.01729pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [1] matrixStats_1.2.0    httr_1.4.7           webshot_
-0.5.5        RColorBrewer_1.1-3[] 
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [49] scales_1.3.0       hms_1.1.3          promises_1.2
+.1     parallel_4.2.2[] 
  []
 
 
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [5] insight_0.19.7       repr_1.1.6           tools_4.
-3.2          backports_1.4.1[] 
+Overfull \hbox (9.03249pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [53] sandwich_3.1-0     RColorBrewer_1.1-3 yaml_2.3.8  
+       rpart_4.1.23[] 
  []
 
 
-Overfull \hbox (26.27869pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ##  [9] utf8_1.2.4           R6_2.5.1             withr_2.
-5.2          cli_3.6.2[] 
+Overfull \hbox (14.78122pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [61] matrixStats_1.2.0  rlang_1.1.2        pkgconfig_2.
+0.3    evaluate_0.23[] 
  []
 
 
-Overfull \hbox (55.02235pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [13] sandwich_3.1-0       labeling_0.4.3       systemfo
-nts_1.0.5    foreign_0.8-85[] 
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [65] htmlwidgets_1.6.4  tidyselect_1.2.0   plyr_1.8.9  
+       magrittr_2.0.3[] 
  []
 
 
-Overfull \hbox (26.27869pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [17] svglite_2.1.3        rstudioapi_0.15.0    generics
-_0.1.3       car_3.1-2[] 
+Overfull \hbox (3.28375pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [69] bookdown_0.37      R6_2.5.1           generics_0.1
+.3     Hmisc_5.1-1[] 
  []
 
 
-Overfull \hbox (37.77615pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [21] leaps_3.1            Matrix_1.6-4         interp_1
-.1-5         fansi_1.0.6[] 
+Overfull \hbox (32.02742pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [73] pillar_1.9.0       foreign_0.8-86     withr_2.5.2 
+       datawizard_0.9.1[] 
  []
 
 
-Overfull \hbox (66.51982pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [25] abind_1.4-5          lifecycle_1.0.4      yaml_2.3
-.8           snakecase_0.11.1[] 
+Overfull \hbox (9.03249pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [77] abind_1.4-5        nnet_7.3-19        car_3.1-2   
+       interp_1.1-5[] 
  []
 
 
-Overfull \hbox (43.52489pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [29] carData_3.0-5        promises_1.2.1       crayon_1
-.5.2         pillar_1.9.0[] 
+Overfull \hbox (3.28375pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [81] utf8_1.2.4         tzdb_0.4.0         rmarkdown_2.
+25     jpeg_0.1-10[] 
  []
 
 
-Overfull \hbox (78.01729pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [33] knitr_1.45           codetools_0.2-19     glue_1.7
-.0           data.table_1.14.10[] 
- []
-
-
-Overfull \hbox (26.27869pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [37] broom.helpers_1.14.0 vcd_1.4-12           vctrs_0.
-6.5          png_0.1-8[] 
- []
-
-
-Overfull \hbox (26.27869pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [41] gtable_0.3.1         assertthat_0.2.1     xfun_0.4
-1            mime_0.12[] 
- []
-
-
-Overfull \hbox (43.52489pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [45] tinytex_0.49         gmp_0.7-3            ellipsis
-_0.3.2       nlme_3.1-163[] 
- []
-
-
-Overfull \hbox (37.77615pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [49] rpart_4.1.21         colorspace_2.1-0     Hmisc_5.
-1-1          nnet_7.3-19[] 
- []
-
-
-Overfull \hbox (37.77615pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [53] mnormt_2.1.1         tidyselect_1.2.0     compiler
-_4.3.2       rvest_1.0.3[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [57] htmlTable_2.4.2      xml2_1.3.5           bookdown
-_0.32        checkmate_2.3.1[] 
- []
-
-
-Overfull \hbox (55.02235pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [61] scales_1.3.0         lmtest_0.9-40        digest_0
-.6.34        rmarkdown_2.25[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [65] htmltools_0.5.7      pkgconfig_2.0.3      jpeg_0.1
--10          base64enc_0.1-3[] 
- []
-
-
-Overfull \hbox (72.26855pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [69] highr_0.10           fastmap_1.1.1        rlang_1.
-1.3          htmlwidgets_1.6.1[] 
- []
-
-
-Overfull \hbox (55.02235pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [73] shiny_1.8.0          farver_2.1.1         zoo_1.8-
-12           jsonlite_1.8.8[] 
- []
-
-
-Overfull \hbox (37.77615pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [77] magrittr_2.0.3       Formula_1.2-5        munsell_
-0.5.0        Rcpp_1.0.12[] 
- []
-
-
-Overfull \hbox (43.52489pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [81] stringi_1.8.3        plyr_1.8.9           parallel
-_4.3.2       deldir_2.0-2[] 
- []
-
-
-Overfull \hbox (55.02235pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [85] splines_4.3.2        hms_1.1.3            rmdfiltr
-_0.1.3       reshape2_1.4.4[] 
- []
-
-
-Overfull \hbox (37.77615pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [89] evaluate_0.23        tzdb_0.4.0           httpuv_1
-.6.13        broom_1.0.5[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 353--353
-[]\T1/lmtt/m/n/10.95 ## [93] Rmpfr_0.9-4          later_1.3.2          viridisL
-ite_0.4.2    cluster_2.1.6[] 
+Overfull \hbox (14.78122pt too wide) in paragraph at lines 355--355
+[]\T1/lmtt/m/n/10.95 ## [85] data.table_1.14.10 vcd_1.4-12         digest_0.6.3
+3      httpuv_1.6.13[] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[3]
-Overfull \vbox (1.09738pt too high) detected at line 420
- []
-
-[4]
-Overfull \hbox (129.75589pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##     alterl1          alterl2          alterl3          
-alterl4          alterl5         alterl6[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min
-.   :-2.000   Min.   :-2.00   Min.   :-2.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st
- Qu.: 2.000   1st Qu.: 2.00   1st Qu.: 2.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  Median : 3.000   Median : 4.000   Median : 2.000   Med
-ian : 3.000   Median : 3.00   Median : 4.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mea
-n   : 2.763   Mean   : 2.99   Mean   : 3.405[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd
- Qu.: 4.000   3rd Qu.: 4.00   3rd Qu.: 5.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 437--437
-[]\T1/lmtt/m/n/10.95 ##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max
-.   : 5.000   Max.   : 5.00   Max.   : 5.000[] 
- []
-
-
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 457--457
+[3] [4]
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 466--466
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 457--457
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 466--466
 []\T1/lmtt/m/n/10.95 ##         80          6        390        266        451 
        511        159[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
-
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+[5]
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         80          6        390        266        451 
        511        159[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         36          4        196        245        379 
        648        355[] 
  []
 
-[5]
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         20          3        500        577        403 
        244        116[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##        122          8        222        260        527 
        543        181[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##        101          4        199        211        452 
        680        216[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         19          3        149        324        358 
        537        473[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         20          2        145        362        471 
        525        338[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         20          3        516        350        325 
        340        309[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         83         10        261        228        425 
        564        292[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ## Weiÿ nicht Verweigert  Gar nicht  Ein wenig      Mäÿig 
      Stark Sehr stark[] 
  []
 
 
-Overfull \hbox (20.52995pt too wide) in paragraph at lines 518--518
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6]
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 527--527
 []\T1/lmtt/m/n/10.95 ##         44          7        537        433        486 
        251        105[] 
  []
 
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-[6]
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.042941492 0.003220612 0.209339775 0.142780462 0.24208
-2662 0.274288782 0.085346216[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.019323671 0.002147075 0.105206656 0.131508320 0.20343
-5319 0.347826087 0.190552872[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.010735373 0.001610306 0.268384326 0.309715513 0.21631
-7767 0.130971551 0.062265164[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.065485776 0.004294149 0.119162641 0.139559850 0.28287
-7080 0.291465378 0.097155126[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.054213634 0.002147075 0.106816962 0.113258186 0.24261
-9431 0.365002684 0.115942029[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.010198604 0.001610306 0.079978529 0.173913043 0.19216
-3178 0.288244767 0.253891573[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.010735373 0.001073537 0.077831455 0.194310252 0.25281
-8035 0.281803543 0.181427805[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.010735373 0.001610306 0.276972625 0.187869028 0.17444
-9812 0.182501342 0.165861514[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.044551798 0.005367687 0.140096618 0.122383253 0.22812
-6677 0.302737520 0.156736447[] 
- []
-
-
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ##  Weiÿ nicht  Verweigert   Gar nicht   Ein wenig       M
-äÿig       Stark  Sehr stark[] 
- []
-
-
+[7] [8] [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[7]
-Overfull \hbox (60.77109pt too wide) in paragraph at lines 579--579
-[]\T1/lmtt/m/n/10.95 ## 0.023617821 0.003757381 0.288244767 0.232420827 0.26086
-9565 0.134728932 0.056360709[] 
- []
-
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
-[8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11]
+[10] [11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [13]
-Overfull \hbox (129.75589pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##     alterl1          alterl2          alterl3          
-alterl4          alterl5         alterl6[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min
-.   :-2.000   Min.   :-2.00   Min.   :-2.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  1st Qu.: 1.000   1st Qu.: 2.000   1st Qu.: 1.000   1st
- Qu.: 2.000   1st Qu.: 2.00   1st Qu.: 2.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Median : 3.000   Median : 4.000   Median : 2.000   Med
-ian : 3.000   Median : 3.00   Median : 4.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Mean   : 2.656   Mean   : 3.282   Mean   : 2.349   Mea
-n   : 2.763   Mean   : 2.99   Mean   : 3.405[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 3.000   3rd
- Qu.: 4.000   3rd Qu.: 4.00   3rd Qu.: 5.000[] 
- []
-
-
-Overfull \hbox (152.75082pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max
-.   : 5.000   Max.   : 5.00   Max.   : 5.000[] 
- []
-
-
-Overfull \hbox (147.00209pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##     alterl7          alterl8          alterl9          
-alterl10        alter_int        alter_cont[] 
- []
-
-
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Min.   :-2.000   Min.   :-2.000   Min.   :-2.000   Min
-.   :-2.000   Min.   : 80.00   Min.   : 80.11[] 
- []
-
-
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  1st Qu.: 2.000   1st Qu.: 1.000   1st Qu.: 2.000   1st
- Qu.: 1.000   1st Qu.: 82.00   1st Qu.: 82.99[] 
- []
-
-
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Median : 3.000   Median : 3.000   Median : 3.000   Med
-ian : 2.000   Median : 86.00   Median : 86.59[] 
- []
-
-
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Mean   : 3.237   Mean   : 2.712   Mean   : 2.969   Mea
-n   : 2.305   Mean   : 86.48   Mean   : 86.98[] 
- []
-
-
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  3rd Qu.: 4.000   3rd Qu.: 4.000   3rd Qu.: 4.000   3rd
- Qu.: 3.000   3rd Qu.: 90.00   3rd Qu.: 90.56[] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [14]
-Overfull \hbox (158.49956pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Max.   : 5.000   Max.   : 5.000   Max.   : 5.000   Max
-.   : 5.000   Max.   :102.00   Max.   :102.92[] 
- []
-
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-946.
+991.
 (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (129.75589pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##                                                        
-              NA\TS1/lmtt/m/n/10.95 '\T1/lmtt/m/n/10.95 s   :6        NA\TS1/lm
-tt/m/n/10.95 '\T1/lmtt/m/n/10.95 s   :6[] 
- []
-
-
-Overfull \hbox (112.50969pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##    alterl_m1       alterl_m2         alterp        ALT_
-agegroup      ALT_sex          famst1[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Min.   :1.000   Min.   :1.000   Min.   :-4.000   Min. 
-  :1.000   Min.   :1.000   Min.   :-1.000[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  1st Qu.:2.600   1st Qu.:2.200   1st Qu.:-4.000   1st Q
-u.:1.000   1st Qu.:1.000   1st Qu.: 1.000[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Median :3.200   Median :2.800   Median :-4.000   Media
-n :2.000   Median :2.000   Median : 4.000[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Mean   :3.168   Mean   :2.877   Mean   : 2.632   Mean 
-  :1.883   Mean   :1.502   Mean   : 2.765[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  3rd Qu.:3.800   3rd Qu.:3.600   3rd Qu.:-4.000   3rd Q
-u.:3.000   3rd Qu.:2.000   3rd Qu.: 4.000[] 
- []
-
-
-Overfull \hbox (135.50462pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Max.   :5.000   Max.   :5.000   Max.   :99.000   Max. 
-  :3.000   Max.   :2.000   Max.   : 5.000[] 
- []
-
-
-Overfull \hbox (43.52489pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##      famst7        demtectcorr         kogstat         
- final         geschlecht[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Min.   :-3.000   Min.   :-11.000   Min.   :-4.00   Min
-.   :81.00   Min.   :1.000[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  1st Qu.:-3.000   1st Qu.: -1.000   1st Qu.:-4.00   1st
- Qu.:81.00   1st Qu.:1.000[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Median : 0.000   Median :  0.000   Median :-4.00   Med
-ian :81.00   Median :2.000[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Mean   :-1.179   Mean   : -1.742   Mean   :-3.21   Mea
-n   :81.09   Mean   :1.502[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  3rd Qu.: 0.000   3rd Qu.:  0.000   3rd Qu.:-4.00   3rd
- Qu.:81.00   3rd Qu.:2.000[] 
- []
-
-
-Overfull \hbox (49.27362pt too wide) in paragraph at lines 946--946
-[]\T1/lmtt/m/n/10.95 ##  Max.   : 1.000   Max.   :  2.000   Max.   : 7.00   Max
-.   :82.00   Max.   :2.000[] 
- []
-
-
-Overfull \hbox (66.51982pt too wide) in paragraph at lines 968--968
+) [15]
+Overfull \hbox (20.52995pt too wide) in paragraph at lines 1014--1014
 []\T1/lmtt/m/n/10.95 ## Warning: attributes are not identical across measure va
-riables; they will be dropped[] 
+riables; they will be[] 
  []
 
-[15] [16]
-Underfull \vbox (badness 1147) has occurred while \output is active []
-
-[17] [18]
-<desc_NRW80_files/figure-latex/likertalterl1-1.pdf, id=160, 463.7325pt x 309.15
-5pt>
+[16] [17] [18] [19]
+<desc_NRW80_files/figure-latex/likertalterl1-1.pdf, id=165, 469.755pt x 325.215
+pt>
 File: desc_NRW80_files/figure-latex/likertalterl1-1.pdf Graphic file (type pdf)
 
 <use desc_NRW80_files/figure-latex/likertalterl1-1.pdf>
 Package pdftex.def Info: desc_NRW80_files/figure-latex/likertalterl1-1.pdf  use
-d on input line 1220.
-(pdftex.def)             Requested size: 433.63013pt x 289.08675pt.
-<desc_NRW80_files/figure-latex/likertalterl2-1.pdf, id=161, 463.7325pt x 309.15
-5pt>
+d on input line 1266.
+(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+<desc_NRW80_files/figure-latex/likertalterl2-1.pdf, id=166, 469.755pt x 325.215
+pt>
 File: desc_NRW80_files/figure-latex/likertalterl2-1.pdf Graphic file (type pdf)
 
 <use desc_NRW80_files/figure-latex/likertalterl2-1.pdf>
 Package pdftex.def Info: desc_NRW80_files/figure-latex/likertalterl2-1.pdf  use
-d on input line 1234.
-(pdftex.def)             Requested size: 433.63013pt x 289.08675pt.
-[19 <./desc_NRW80_files/figure-latex/likertalterl1-1.pdf>]
-<desc_NRW80_files/figure-latex/likertalterl3-1.pdf, id=179, 463.7325pt x 309.15
-5pt>
+d on input line 1280.
+(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+
+Underfull \vbox (badness 1472) has occurred while \output is active []
+
+[20 <./desc_NRW80_files/figure-latex/likertalterl1-1.pdf>]
+<desc_NRW80_files/figure-latex/likertalterl3-1.pdf, id=181, 469.755pt x 325.215
+pt>
 File: desc_NRW80_files/figure-latex/likertalterl3-1.pdf Graphic file (type pdf)
 
 <use desc_NRW80_files/figure-latex/likertalterl3-1.pdf>
 Package pdftex.def Info: desc_NRW80_files/figure-latex/likertalterl3-1.pdf  use
-d on input line 1249.
-(pdftex.def)             Requested size: 433.63013pt x 289.08675pt.
-<desc_NRW80_files/figure-latex/likertalterl4-1.pdf, id=180, 463.7325pt x 309.15
-5pt>
+d on input line 1295.
+(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+<desc_NRW80_files/figure-latex/likertalterl4-1.pdf, id=182, 469.755pt x 325.215
+pt>
 File: desc_NRW80_files/figure-latex/likertalterl4-1.pdf Graphic file (type pdf)
 
 <use desc_NRW80_files/figure-latex/likertalterl4-1.pdf>
 Package pdftex.def Info: desc_NRW80_files/figure-latex/likertalterl4-1.pdf  use
-d on input line 1264.
-(pdftex.def)             Requested size: 433.63013pt x 289.08675pt.
+d on input line 1310.
+(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
 
-Underfull \vbox (badness 1117) detected at line 1284
+Underfull \vbox (badness 4217) detected at line 1330
  []
 
-[20 <./desc_NRW80_files/figure-latex/likertalterl2-1.pdf>] [21 <./desc_NRW80_fi
-les/figure-latex/likertalterl3-1.pdf> <./desc_NRW80_files/figure-latex/likertal
-terl4-1.pdf>] [22]
-Overfull \hbox (445.93623pt too wide) in paragraph at lines 1364--1364
+[21 <./desc_NRW80_files/figure-latex/likertalterl2-1.pdf>] [22 <./desc_NRW80_fi
+les/figure-latex/likertalterl3-1.pdf>] [23 <./desc_NRW80_files/figure-latex/lik
+ertalterl4-1.pdf>]
+Overfull \hbox (445.93623pt too wide) in paragraph at lines 1410--1410
 []\T1/lmtt/m/n/10.95 1.  With \TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/10.95 knitr::pu
 rl("desc_NRW80.Rmd")\TS1/lmtt/m/n/10.95 ` \T1/lmtt/m/n/10.95 you can extract th
 e whole R code from the R Markdown file and write it into the R script \TS1/lmt
@@ -1557,7 +1106,7 @@ t/m/n/10.95 `\T1/lmtt/m/n/10.95 desc_NRW80.R\TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/1
  []
 
 
-Overfull \hbox (1929.10948pt too wide) in paragraph at lines 1364--1364
+Overfull \hbox (1929.10948pt too wide) in paragraph at lines 1410--1410
 []\T1/lmtt/m/n/10.95 2.  The dataset \TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/10.95 ge
 sis.RData\TS1/lmtt/m/n/10.95 ` \T1/lmtt/m/n/10.95 comes with two different tibb
 les: \TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/10.95 dfsav\TS1/lmtt/m/n/10.95 ` \T1/lmt
@@ -1573,7 +1122,7 @@ d again, and compare the stats.[]
  []
 
 
-Overfull \hbox (164.24829pt too wide) in paragraph at lines 1364--1364
+Overfull \hbox (164.24829pt too wide) in paragraph at lines 1410--1410
 []\T1/lmtt/m/n/10.95 3.  Check possible differences in the \TS1/lmtt/m/n/10.95 
 `\T1/lmtt/m/n/10.95 gglikert\TS1/lmtt/m/n/10.95 ` \T1/lmtt/m/n/10.95 plots when
  using \TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/10.95 df_alterl_un\TS1/lmtt/m/n/10.95 
@@ -1582,14 +1131,14 @@ rl\TS1/lmtt/m/n/10.95 `\T1/lmtt/m/n/10.95 .[]
  []
 
 
-Overfull \hbox (687.38304pt too wide) in paragraph at lines 1364--1364
+Overfull \hbox (687.38304pt too wide) in paragraph at lines 1410--1410
 []\T1/lmtt/m/n/10.95 4.  The stats above show that dealing with missing or non-
 standard answers is a crucial thing. Please read chapter *Missing Values* of @W
 ickham2023R, see: <https://r4ds.hadley.nz/missing-values>.[] 
  []
 
 
-Overfull \hbox (1078.29692pt too wide) in paragraph at lines 1364--1364
+Overfull \hbox (1078.29692pt too wide) in paragraph at lines 1410--1410
 []\T1/lmtt/m/n/10.95 5. The labels of the variables \TS1/lmtt/m/n/10.95 `\T1/lm
 tt/m/n/10.95 alterl1:alterl10\TS1/lmtt/m/n/10.95 ` \T1/lmtt/m/n/10.95 have "Alt
 ernserleben: " at the beginning. This is not necessary and overloads the graphs
@@ -1597,19 +1146,19 @@ ernserleben: " at the beginning. This is not necessary and overloads the graphs
 ctive place in the rmd and then knit it again.[] 
  []
 
-[23
+[24
 
-] [24
+] [25
 
 ] (./desc_NRW80.aux) ) 
 Here is how much of TeX's memory you used:
- 19080 strings out of 476091
- 312898 string characters out of 5794081
+ 19081 strings out of 477884
+ 312905 string characters out of 5835936
  1874330 words of memory out of 5000000
- 38882 multiletter control sequences out of 15000+600000
+ 38659 multiletter control sequences out of 15000+600000
  608576 words of font info for 186 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 77i,11n,81p,3193b,959s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 81 hyphenation exceptions out of 8191
+ 77i,11n,81p,3193b,991s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/l
 mbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
@@ -1618,10 +1167,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on desc_NRW80.pdf (24 pages, 342214 bytes).
+Output written on desc_NRW80.pdf (25 pages, 341358 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 500000)
  49301 words of extra memory for PDF output out of 51595 (max. 10000000)
 
