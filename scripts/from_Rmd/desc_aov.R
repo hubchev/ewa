@@ -1,11 +1,17 @@
-## ----analysis-preferences-------------------------------------------------------------------------------
+## ----analysis-preferences-------------------------------------------------------------------------------------
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+
+
+de_terms <- getOption("papaja.terms")
+de_terms$note <- "Anmerkungen"
+options("papaja.terms" = de_terms) 
+
 # rm(list = ls())
 
 
-## ----echo=TRUE, eval=TRUE-------------------------------------------------------------------------------
+## ----echo=TRUE, eval=TRUE-------------------------------------------------------------------------------------
 if (!require(pacman)) install.packages("pacman")
 pacman::p_load(tidyverse, janitor, psych, magick, 
                car, knitr, papaja, kableExtra, stargazer)
@@ -30,13 +36,13 @@ df <- ModKogDat |>
   ungroup() 
 
 
-## ----tabinspect, echo=FALSE-----------------------------------------------------------------------------
+## ----tabinspect, echo=FALSE-----------------------------------------------------------------------------------
 
 apa_table(df,  caption = "Full Dataset")
 
 
 
-## ----tabsumstat, echo=FALSE-----------------------------------------------------------------------------
+## ----tabsumstat, echo=FALSE-----------------------------------------------------------------------------------
 tabsumstat <- df |>
   psych::describe()   |> 
   as_tibble(rownames="Variables")  |> 
@@ -50,7 +56,7 @@ apa_table(
 )
 
 
-## ----tabsummary, echo=FALSE-----------------------------------------------------------------------------
+## ----tabsummary, echo=FALSE-----------------------------------------------------------------------------------
 tab_summary <- df |> 
   group_by(id) |> 
   summarize(
@@ -75,21 +81,21 @@ apa_table(
 )
 
 
-## ----aboxplot,  fig.cap="Boxplots of all combinations of `modus` and `kognition`", echo=FALSE-----------
+## ----aboxplot,  fig.cap="Boxplots of all combinations of `modus` and `kognition`", echo=FALSE-----------------
 ggplot(df, aes(x=kognition, y=dauer)) +
   geom_boxplot() + 
   facet_wrap(~modus) 
 
 
-## ----iplotdauerkog,  fig.cap="Interaction Plot: `dauer` and `modus`", echo=FALSE------------------------
+## ----iplotdauerkog,  fig.cap="Interaction Plot: `dauer` and `modus`", echo=FALSE------------------------------
 interaction.plot(df$kognition, df$modus, response = df$dauer)
 
 
-## ----iplotdauermod,  fig.cap="Interaction Plot: `dauer` and `kognition`", echo=FALSE--------------------
+## ----iplotdauermod,  fig.cap="Interaction Plot: `dauer` and `kognition`", echo=FALSE--------------------------
 interaction.plot( df$modus, df$kognition, response = df$dauer)
 
 
-## ----tabanova, echo=FALSE-------------------------------------------------------------------------------
+## ----tabanova, echo=FALSE-------------------------------------------------------------------------------------
 anova2_model <- aov(dauer ~ modus + kognition + modus:kognition, data = df)
 
 # summary(anova2_model)
@@ -103,11 +109,11 @@ apa_table(
 )
 
 
-## ----echo=TRUE------------------------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------------
 contrasts(df$kognition) <- cbind(c(2, -1, -1), c(0, 1,-1)) 
 
 
-## ----tabanovaext, echo=FALSE----------------------------------------------------------------------------
+## ----tabanovaext, echo=FALSE----------------------------------------------------------------------------------
 anova2_model2 <- summary.aov(anova2_model, 
             split=list(kognition=
                          list("altersadäquat vs beeinträchtigt"=1,
@@ -124,7 +130,7 @@ apa_table(
 
 
 
-## ----echo=TRUE------------------------------------------------------------------------------------------
+## ----echo=TRUE------------------------------------------------------------------------------------------------
 df3 <- read.csv("../data/ModKogDat3F.csv", header=TRUE, sep=",") |> 
   mutate(
     modus = as.factor(modus),
@@ -143,13 +149,13 @@ df3 <- read.csv("../data/ModKogDat3F.csv", header=TRUE, sep=",") |>
   tibble() 
 
 
-## ----tabinspect3, echo=FALSE----------------------------------------------------------------------------
+## ----tabinspect3, echo=FALSE----------------------------------------------------------------------------------
 
 apa_table(df3,  caption = "Full Dataset: `ModKogDat3F.csv`")
 
 
 
-## ----tabsumstat3, echo=FALSE----------------------------------------------------------------------------
+## ----tabsumstat3, echo=FALSE----------------------------------------------------------------------------------
 tabsumstat3 <- df |>
   psych::describe()   |> 
   as_tibble(rownames="Variables")  |> 
@@ -163,7 +169,7 @@ apa_table(
 )
 
 
-## ----tabsummary3, echo=FALSE----------------------------------------------------------------------------
+## ----tabsummary3, echo=FALSE----------------------------------------------------------------------------------
 tab_summary <- df3 |> 
   group_by(id) |> 
   summarize(
@@ -196,7 +202,7 @@ ggplot(df3, aes(x=kognition, y=dauer)) +
                geom="point", shape=18, size=3)
 
 
-## ----tabanova3, echo=FALSE------------------------------------------------------------------------------
+## ----tabanova3, echo=FALSE------------------------------------------------------------------------------------
 anova3_model <- aov(dauer ~ modus*kognition*interviewer, data = df3)
 # summary.aov(anova3.Model)
 
@@ -210,7 +216,7 @@ apa_table(
 )
 
 
-## ----tabsumstat3correct, echo=TRUE----------------------------------------------------------------------
+## ----tabsumstat3correct, echo=TRUE----------------------------------------------------------------------------
 tabsumstat3 <- df3 |>
   psych::describe()   |> 
   as_tibble(rownames="Variables")  |> 
@@ -224,17 +230,17 @@ apa_table(
 )
 
 
-## ----tabinspect3split, echo=TRUE------------------------------------------------------------------------
+## ----tabinspect3split, echo=TRUE------------------------------------------------------------------------------
 df3p <- df3 |> 
   filter(interviewer == "profi")
 df3e <- df3 |> 
   filter(interviewer == "ehrenamt")
 
 
-## ----tabinspect3p, echo=TRUE----------------------------------------------------------------------------
+## ----tabinspect3p, echo=TRUE----------------------------------------------------------------------------------
 apa_table(df3p,  caption = "Interviews by Professionals")
 
 
-## ----tabinspect3e, echo=TRUE----------------------------------------------------------------------------
+## ----tabinspect3e, echo=TRUE----------------------------------------------------------------------------------
 apa_table(df3e,  caption = "Interviews by Volunteers (Ehrenamt)")
 

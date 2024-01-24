@@ -27,6 +27,11 @@ dir.create("scripts/from_Rmd", recursive = TRUE, showWarnings = FALSE)
 knitr::purl("rmd_desc/desc_NRW80.Rmd", output = "scripts/from_Rmd/desc_NRW80.R")
 cat("Conversion of the rmd to a script was successfull.\n")
 
+###################################################
+rmarkdown::render("rmd_festuca/rmd_festuca.Rmd", "all")
+rmarkdown::render("rmd_reg/rmd_reg.Rmd", "all")
+rmarkdown::render("rmd_apa_deutsch/rmd_apa_deutsch.Rmd", "all")
+rmarkdown::render("apa7vorlage/apa7vorlage.Rmd", "all")
 
 ###################################################
 ## desc_aov: "ANOVA Lecture Material"

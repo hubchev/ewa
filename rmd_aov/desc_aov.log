@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.11.30)  22 JAN 2024 16:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.11)  24 JAN 2024 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,7 +501,7 @@ Package: times 2020/03/25 PSNFSS-v9.3 (SPQR)
 Package babel Info: Importing data for ngerman
 (babel)             from babel-de.ini. Reported on input line 217.
 Package babel Info: Hyphen rules for 'ngerman' set to \l@ngerman
-(babel)             (\language13). Reported on input line 217.
+(babel)             (\language7). Reported on input line 217.
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -799,29 +799,29 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 288.
 [2]
-<desc_aov_files/figure-latex/aboxplot-1.pdf, id=61, 469.755pt x 325.215pt>
+<desc_aov_files/figure-latex/aboxplot-1.pdf, id=61, 459.7175pt x 315.1775pt>
 File: desc_aov_files/figure-latex/aboxplot-1.pdf Graphic file (type pdf)
 <use desc_aov_files/figure-latex/aboxplot-1.pdf>
 Package pdftex.def Info: desc_aov_files/figure-latex/aboxplot-1.pdf  used on in
 put line 422.
-(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+(pdftex.def)             Requested size: 433.64267pt x 297.30087pt.
 [3
 
  <./desc_aov_files/figure-latex/aboxplot-1.pdf>] [4] [5]
-<desc_aov_files/figure-latex/iplotdauerkog-1.pdf, id=83, 469.755pt x 325.215pt>
-
+<desc_aov_files/figure-latex/iplotdauerkog-1.pdf, id=85, 437.635pt x 250.9375pt
+>
 File: desc_aov_files/figure-latex/iplotdauerkog-1.pdf Graphic file (type pdf)
 <use desc_aov_files/figure-latex/iplotdauerkog-1.pdf>
 Package pdftex.def Info: desc_aov_files/figure-latex/iplotdauerkog-1.pdf  used 
 on input line 433.
-(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
-<desc_aov_files/figure-latex/iplotdauermod-1.pdf, id=84, 469.755pt x 325.215pt>
-
+(pdftex.def)             Requested size: 433.62726pt x 248.63947pt.
+<desc_aov_files/figure-latex/iplotdauermod-1.pdf, id=86, 456.70625pt x 249.9337
+5pt>
 File: desc_aov_files/figure-latex/iplotdauermod-1.pdf Graphic file (type pdf)
 <use desc_aov_files/figure-latex/iplotdauermod-1.pdf>
 Package pdftex.def Info: desc_aov_files/figure-latex/iplotdauermod-1.pdf  used 
 on input line 439.
-(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+(pdftex.def)             Requested size: 433.63153pt x 237.30605pt.
 
 Overfull \hbox (41.61002pt too wide) in paragraph at lines 483--506
  [] 
@@ -834,12 +834,13 @@ re-latex/iplotdauermod-1.pdf>]
 
 LaTeX Warning: Float too large for page by 252.60835pt on input line 611.
 
-<desc_aov_files/figure-latex/df3boxplot-1.pdf, id=115, 469.755pt x 325.215pt>
+<desc_aov_files/figure-latex/df3boxplot-1.pdf, id=121, 459.7175pt x 315.1775pt>
+
 File: desc_aov_files/figure-latex/df3boxplot-1.pdf Graphic file (type pdf)
 <use desc_aov_files/figure-latex/df3boxplot-1.pdf>
 Package pdftex.def Info: desc_aov_files/figure-latex/df3boxplot-1.pdf  used on 
 input line 680.
-(pdftex.def)             Requested size: 433.62059pt x 300.19887pt.
+(pdftex.def)             Requested size: 433.64267pt x 297.30087pt.
 [8 <./desc_aov_files/figure-latex/df3boxplot-1.pdf>] [9] [10] [11]
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family pcr in TS1 encoding.
@@ -860,7 +861,7 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 [12] [13] [14] [15] (./desc_aov.aux) ) 
 Here is how much of TeX's memory you used:
  19211 strings out of 477884
- 315724 string characters out of 5835936
+ 315724 string characters out of 5835937
  1896330 words of memory out of 5000000
  38825 multiletter control sequences out of 15000+600000
  619494 words of font info for 179 fonts, out of 8000000 for 9000
@@ -880,10 +881,10 @@ rr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on desc_aov.pdf (15 pages, 199044 bytes).
+Output written on desc_aov.pdf (15 pages, 200616 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
+ 305 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
  72 named destinations out of 1000 (max. 500000)
  32861 words of extra memory for PDF output out of 35830 (max. 10000000)
 
