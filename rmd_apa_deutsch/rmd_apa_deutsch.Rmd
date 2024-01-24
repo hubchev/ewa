@@ -16,7 +16,7 @@ affiliation:
     institution   : "Charlotte Fresenius University"
 
 authornote: |
-  Alle Dateien im Zusammenhang mit diesem Document findet man hier: [https://github.com/hubchev/ewa](https://github.com/hubchev/ewa). Kontakt bitte über `stephan.huber@hs-fresenius.de` aufnehmen.
+  Alle Dateien im Zusammenhang mit diesem Dokument findet man hier: [https://github.com/hubchev/ewa](https://github.com/hubchev/ewa). Kontakt bitte über `stephan.huber@hs-fresenius.de` aufnehmen.
 
 abstract: |
   In diesem Dokument zeige ich wie ein APA konformes Manusskript erstellt werden kann. Hierzu passe ich die Vorlage des 'papaja' packages [@R-papaja] an.
