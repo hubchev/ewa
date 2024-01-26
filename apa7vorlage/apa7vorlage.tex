@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  doc,floatsintext]{apa7}
+  doc]{apa7}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -146,21 +146,8 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{Schlüsselwort-XYZ\newline\indent Word count: X}
+\keywords{Schlüsselwort-XYZ}
 \usepackage{csquotes}
-\usepackage[titles]{tocloft}
-\cftpagenumbersoff{figure}
-\renewcommand{\cftfigpresnum}{\itshape\figurename\enspace}
-\renewcommand{\cftfigaftersnum}{.\space}
-\setlength{\cftfigindent}{0pt}
-\setlength{\cftafterloftitleskip}{0pt}
-\settowidth{\cftfignumwidth}{Figure 10.\qquad}
-\cftpagenumbersoff{table}
-\renewcommand{\cfttabpresnum}{\itshape\tablename\enspace}
-\renewcommand{\cfttabaftersnum}{.\space}
-\setlength{\cfttabindent}{0pt}
-\setlength{\cftafterloftitleskip}{0pt}
-\settowidth{\cfttabnumwidth}{Table 10.\qquad}
 \makeatletter
 \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
   {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
@@ -191,22 +178,20 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={APA Vorlage in deutscher Sprache},
-  pdfauthor={Prof.~Dr.~Stephan Huber1,2 \& Vorname2 Nachname21,2},
+  pdfauthor={Prof.~Dr.~Stephan Huber1,2 \& Vorname2 Nachname21},
   pdflang={en-EN},
   pdfkeywords={Schlüsselwort-XYZ},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{APA Vorlage in deutscher Sprache}
-\author{Prof.~Dr.~Stephan Huber\textsuperscript{1,2} \& Vorname2 Nachname2\textsuperscript{1,2}}
+\author{Prof.~Dr.~Stephan Huber\textsuperscript{1,2} \& Vorname2 Nachname2\textsuperscript{1}}
 \date{}
 
 
 \shorttitle{Kurztitel der Arbeit}
 
 \authornote{
-
-Fügen Sie hier die vollständigen Abteilungszugehörigkeiten für jeden Autor ein. Jede neue Zeile muss eingerückt werden, wie diese Zeile.
 
 Alle Dateien im Zusammenhang mit diesem Dokument findet man hier: \url{https://github.com/hubchev/ewa/apa7vorlage}. Kontakt bitte über \texttt{stephan.huber@hs-fresenius.de} aufnehmen.
 
@@ -222,12 +207,6 @@ Hier steht eine Zusammenfassung der Arbeit. Diese Manuskript macht inhaltlich ke
 
 \begin{document}
 \maketitle
-
-{
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
-\clearpage
 
 \hypertarget{tabellen-und-grafiken}{%
 \section{Tabellen und Grafiken}\label{tabellen-und-grafiken}}
@@ -251,7 +230,7 @@ Die Tabellen und Abbildungen sind als gleitende Einschübe im Haupttext erwähnt
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:mixedtab}Descriptive statistics of correct recall by dosage.}
+\caption{\label{tab:mixedtab}Ein Tabelle mit deskriptiver Statistik.}
 
 \begin{tabular}{llllll}
 \toprule
@@ -265,7 +244,7 @@ C & 19.19 & 19.00 & 3.52 & 13 & 25\\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Anmerkungen.} This table was created with apa\_table().}
+\normalsize{\textit{Anmerkungen.} Diese Tabelle wurde mit apa\_table() erstellt.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -482,12 +461,5 @@ unterdrücken.
 
 
 \printbibliography
-
-\clearpage
-\renewcommand{\listfigurename}{Figure captions}
-
-\clearpage
-\renewcommand{\listtablename}{Table captions}
-
 
 \end{document}

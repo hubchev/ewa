@@ -1,0 +1,29 @@
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5294}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4706}}@{}}
+\caption{So kann Literatur zitiert werden \label{tbl-letters}}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Code
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+So erscheint es im Text
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Code
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+So erscheint es im Text
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{@Zank2022Quality} & \textcite{Zank2022Quality} \\
+\texttt{@Zank2022Quality{[}S.\ 6{]}} & \textcite[S. 6]{Zank2022Quality} \\
+\texttt{{[}@Zank2022Quality{]}} & \autocite{Zank2022Quality} \\
+\texttt{{[}@Zank2022Quality,\ S.\ 7{]}} & \autocite[S. 7]{Zank2022Quality} \\
+\texttt{{[}@Zank2022Quality;\ @Aust2020papaja{]}} & \autocite{Zank2022Quality,Aust2020papaja} \\
+\texttt{{[}Vgl.\ @Zank2022Quality,\ S.\ 31;\ @Aust2020papaja,\ S.\ 13{]}} & \autocites[Vgl.][S. 31]{Zank2022Quality}[S. 13]{Aust2020papaja} \\
+\end{longtable}

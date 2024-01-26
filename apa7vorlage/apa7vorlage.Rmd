@@ -11,7 +11,7 @@ author:
     email         : "stephan.huber@hs-fresenius.de"
 
   - name          : "Vorname2 Nachname2"
-    affiliation   : "1,2"
+    affiliation   : "1"
 
 affiliation:
   - id            : "1"
@@ -20,26 +20,23 @@ affiliation:
     institution   : "Charlotte Fresenius University"
 
 authornote: |
-  Fügen Sie hier die vollständigen Abteilungszugehörigkeiten für jeden Autor ein. Jede neue Zeile muss eingerückt werden, wie diese Zeile.
-
   Alle Dateien im Zusammenhang mit diesem Dokument findet man hier: [https://github.com/hubchev/ewa/apa7vorlage](https://github.com/hubchev/ewa/apa7vorlage). Kontakt bitte über `stephan.huber@hs-fresenius.de` aufnehmen.
 
 abstract: |
   Hier steht eine Zusammenfassung der Arbeit. Diese Manuskript macht inhaltlich keinen Sinn. Die entsprechend R Markdown Datei (.Rmd) soll lediglich das erstellen von APA (Version 7) konformen Manuskripten erleichtern. Ich versuche die wesentlichen Bestandteile von wissenschaftlichen Texten hier anzudeuten. 
   
 keywords          : "Schlüsselwort-XYZ"
-wordcount         : "X"
 
-floatsintext      : yes
+floatsintext      : no
 linenumbers       : no
 draft             : no
 mask              : no
 
-figurelist        : yes
-tablelist         : yes
+figurelist        : no
+tablelist         : no
 footnotelist      : no
 numbersections    : yes
-toc               : yes
+toc               : no
 
 classoption       : "doc"
 header-includes:
@@ -81,8 +78,6 @@ de_terms$word_count <- "Anzahl der Wörter"
 options("papaja.terms" = de_terms) 
 rm(list = ls())
 ```
-
-\clearpage
 
 # Tabellen und Grafiken
 
@@ -135,8 +130,8 @@ descriptives[, -1] <- printnum(descriptives[, -1])
 
 apa_table(
   descriptives
-  , caption = "Descriptive statistics of correct recall by dosage."
-  , note = "This table was created with apa_table()."
+  , caption = "Ein Tabelle mit deskriptiver Statistik."
+  , note = "Diese Tabelle wurde mit apa_table() erstellt."
   , escape = TRUE
 )
 ```
