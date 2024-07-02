@@ -1,0 +1,284 @@
+---
+title             : "APA und die deutsche Sprache"
+shorttitle        : "APA und die deutsche Sprache"
+
+author: 
+  - name          : "Prof. Dr. Stephan Huber"
+    affiliation   : "1,2"
+    corresponding : no    # Define only one corresponding author
+    address       : "Im Mediapark 4e"
+    email         : "stephan.huber@hs-fresenius.de"
+
+affiliation:
+  - id            : "1"
+    institution   : "Fresenius University of Applied Science"
+  - id            : "2"
+    institution   : "Charlotte Fresenius University"
+
+authornote: |
+  Alle Dateien im Zusammenhang mit diesem Dokument findet man hier: [https://github.com/hubchev/ewa](https://github.com/hubchev/ewa). Kontakt bitte über `stephan.huber@hs-fresenius.de` aufnehmen.
+
+abstract: |
+  In diesem Dokument zeige ich wie ein APA konformes Manusskript erstellt werden kann. Hierzu passe ich die Vorlage des 'papaja' packages [@R-papaja] an.
+
+keywords          : "papaja, APA"
+
+floatsintext      : yes
+linenumbers       : no
+draft             : no
+mask              : no
+numbersections    : yes
+
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+
+classoption       : "doc"
+toc               : no
+
+output            : 
+  papaja::apa6_pdf:
+    citation_package: biblatex
+
+csl               : "deutsche-gesellschaft-fur-psychologie.csl"
+header-includes:
+  - \usepackage[backend=biber,style=apa]{biblatex} 
+  - \DeclareLanguageMapping{german}{german-apa}
+  - \addbibresource{lit.bib}
+  - \DefineBibliographyStrings{ngerman}{references = {Literaturverzeichnis}}
+  - \usepackage{times}
+  - \babelprovide[main,import]{ngerman}
+  - \usepackage{floatrow}
+  - \floatsetup[figure]{capposition=top}
+  - \floatsetup[table]{capposition=top}
+---
+
+
+```{r}
+de_terms <- getOption("papaja.terms")
+de_terms$note <- "Anmerkungen"
+de_terms$keywords <- "Schlüsselbegriffe"
+options("papaja.terms" = de_terms) 
+rm(list = ls())
+```
+
+
+# APA, `papaja` und die deutsche Sprache
+
+Das `papaja` package von @R-papaja erlaubt das Erstellen von APA konformen Manuskripten mit R Markdown. Die `papaja` Vorlage ist für die englische Sprache konzipiert. Will man nun in deutscher Sprache publizieren muss hier einiges angepasst werden. Ich werde im Folgenden zeigen, wie das geht. Zuvor sollte aber die Frage gestellt werden, ob die APA Formatierungs und Zietierregeln überhaupt für eine deutschsprachige Publikation eingefordert werden können. Die Regeln werden von der  @Association2020Publication festgelegt und setzen die Richtlinien naturgemäß für die englische Sprache. Eine offizielle Übersetzung der englischen APA-Richtlinien  gibt es nicht. Anstatt dessen braut jeder so ein bisschen sein Süppchen. Viele Dozenten und (deutsche) Universitäten verweisen in ihren "Handbüchern zum verfassen von Abschlussarbeiten" auf APA, bleiben aber genauere Angaben schuldig. Leider lassen sich nicht ohne weitere Bestimmungen und Übersetzungsregeln übertragen. Eine Rücksprache mit dem Verlag, dem Auftraggeber, oder der Universität ist hier zwingend erforderlich. Beispielsweise sollte geklärt werden ob konsistent die deutsche oder die englischen Bezeichnungen verwendet werden sollen (beispielsweise "Herausgeber" vs. "Editor" oder "Band" vs. "Volume"). Ich empfehle hier die englische Bezeichnungen zu wählen, wenn die Mehrzahl der Referenzen in englischer Sprache sind.
+
+
+
+# Warum Deutsch?
+
+Englisch ist anerkannte Wissenschaftssprache und sollte für die Verbreitung von Wissen die erste Wahl sein. Durch die Wahl der  deutschen Sprache, wird der Zugang unnötig erschwert. Ich sehe folgende Gründe, für eine Publikation in deutscher Sprache: 
+ 
+1. Die Autoren können kein Englisch.
+2. Der Verlag will Deutsch als Wissenschaftssprache fördern.
+2. Der Verlag ist für die weltweite Vermarktung betriebswirtschaftlich nicht ausgelegt. 
+2. Es wird eine zügige und große Verbreitung im deutschsprachigen Raum angestrebt.
+3. Die Inhalte der Arbeit sind besonders von regionalem Interesse. 
+4. Die Arbeit will im deutschsprachigen Raum insbesondere von populärwissenschaftliche Kreise beachtet werden.
+
+# Anpassungen an der `papaja` Vorlage 
+
+Eine Anpassung der `papaja` Vorlage bedingt etwas Wissen über \LaTeX^[\LaTeX\ ist ein plattformunabhängiges und freies Softwarepaket. Anders als beispielsweise das Textverarbeitungsprogramm MS Word funktioniert \LaTeX\ nicht nach dem  "What-you-see-is-what-you-get"-Prinzip. Anstatt dessen wird ausschließlich mit Text und Makros gearbeitet, um das Erscheinungsbild der Publikation zu manipulieren. Besonders in Wissenschaftsverlagen findet es Anwendung. So wird praktisch alles bei Springer oder Elsevier mit \LaTeX\ gesetzt.]. Dies ist für die Erstellung der pdf Datei verantwortlich. 
+
+Ich identifiziere im Wesentlichen folgenden Anpassungsbedarf in `papaja`^[Sollten weitere Sachen auffallen, werde ich gerne versuchen diese zu behandeln.]:
+
+1. Einige Übersetzungen, wie "Table", "Figure", "Note", "Table of Contents" und "Literature". 
+2. Entsprechend APA Version 7 müssen auch für Abbildungen die Überschriften oberhalb der Abbildung gesetzt werden, siehe: [https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures).
+3. Die Schriftart in _Times New Roman_ verändern.^[Voreingestellt ist die Schriftart Computer Modern. Das ist APA konform.]
+4. Die Autoren werden mit "and" verbunden. Hier sollte aber das deutsche "und" stehen, oder "&".
+5. Einfügen eines Appendix nach dem Literaturverzeichnis.
+
+
+Um 1., 2. und 3. einzuarbeiten, sollte dem YAML header Folgendes hinzugefügt werden:
+
+````
+  header-includes:
+    - \usepackage{times}
+    - \babelprovide[main,import]{ngerman}
+    - \usepackage{floatrow}
+    - \floatsetup[figure]{capposition=top}
+    - \floatsetup[table]{capposition=top}
+  ---
+```` 
+
+Zusätzlich sollte noch Folgendes     gleich unterhalb des YAML header geschrieben werden:
+
+
+````
+```{r}`r ''`
+de_terms <- getOption("papaja.terms")
+de_terms$note <- "Anmerkungen"
+de_terms$keywords <- "Schlüsselbegriffe"
+options("papaja.terms" = de_terms) 
+rm(list = ls())
+```
+````
+
+Punkt 4. zu berücksichtigen, ist etwas problematischer: APA ist schlicht kein deutscher Zitierstil und beid er gleichzietigen Zitation von deutschsprachiger und englischsprachiger Literatur sind Kompromisse unumgänglich. 
+Es gibt unzählige Zitierstile die auf APA angelehnt sind. Hier eine Liste: [https://www.zotero.org/styles?q=apa](https://www.zotero.org/styles?q=apa).
+Ich schlage vor, einen dieser Zitierstile zu verwenden:  
+
+- [https://www.zotero.org/styles/apa](https://www.zotero.org/styles/apa): Hier handelt es sich um den APA Version 7 Zitierstil, wobei mit dem _ampersand_ ("&") anstatt dem _and_ gearbeitet wird.
+- [https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie](https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie): Hier handelt es sich um den Zitierstil _Deutsche Gesellschaft für Psychologie 5. Auflage (Deutsch)_.
+
+Den gewünschten Stil runterladen und Folgendes in den YAML header aufnehmen:
+````
+csl               : "apa.csl"
+````
+
+Eine Sache sollte noch angepasst werden. Anstatt "and" sollte jetzt "und" zwischen den Autoren stehen, wenn diese zitiert werden. Dies gelingt durch Folgendes im YAML header:
+
+````
+output            : 
+  papaja::apa6_pdf:
+    citation_package: biblatex
+
+csl               : "apa.csl"
+header-includes:
+  - \usepackage[backend=biber,style=apa]{biblatex} 
+  - \DeclareLanguageMapping{german}{german-apa}
+  - \addbibresource{lit.bib}
+  - \DefineBibliographyStrings{ngerman}{references = {Literaturverzeichnis}}
+
+````
+
+Sowie der Befehl das Literaturverzeichnis auch zu setzen. Dies sollte derart geschehen:^[Darüber hinaus muss sichergestellt sein, dass auf dem entsprechenden PC `biber` installiert ist. In Debian geschieht dies etwa durch `sudo apt install biber` und in MAC durch `brew install biber`. In der Posit Cloud läuft es ohne Probleme und ohne extra Installation.] 
+
+````
+\printbibliography
+````
+
+
+Um 5. umzusetzen, sollte am Ende der eigentlichen .Rmd Datei dies hier eingefügt werden:
+
+````
+\newpage
+# (APPENDIX) Appendix {-} 
+
+````
+
+# Empfehlungen
+
+Anstatt die einzelnen Teile manuell in den YAML header und den Text einzufügen, empfehle ich das github repository zu klonen beziehungweise zu herunterzuladen und die entsprechende .Rmd Datei als Vorlage zu verwenden. Der YAML header ist außerordentlich empfindlich. Ein Leerzeichen zuviel und nichts funktioniert.
+
+Darüber hinaus bitte ich möglichst wenig von der Vorlage abzuweichen. Fast alle Änderungswünsche von Studierenden die ich bislang miterleben durfte, stellen keine Verbesserung dar. Schlichtheit ist trumpf bei wissenschaftlichen Arbeiten. Insbesondere Verlage, Herausgeber und wissenschaftliche Gutachter (Professoren, Referees, Kursleiter) sind über wenig verschnörkselte Manuskripte dankbar. 
+
+\printbibliography
+\clearpage
+
+
+\newpage
+# (APPENDIX) Appendix {-} 
+
+# Das ist der erste Anhang 
+
+Hier befindet sich Abbildung \@ref(fig:plotcar) sowie Tabelle \@ref(tab:mixedtab).
+
+\clearpage
+
+```{r plotcar, fig.cap = "Das ist ein gaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaannnnnnnzzzz lange Überschrift für eine Abbildung.", out.width = "\\textwidth"}
+plot(cars)
+```
+
+```{r, include=FALSE}
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(tinylabels, 
+               papaja,
+               haven, 
+               sjlabelled,
+               expss,
+               psych,
+               tidyverse, 
+               rstatix, 
+               ggstats
+)
+```
+
+```{r mixedtab, echo=FALSE, warning=FALSE}
+load(url("https://github.com/crsh/papaja/raw/main/tests/testthat/data/mixed_data.rdata"))
+descriptives <- mixed_data |>  
+  group_by(Dosage) |> 
+  summarize(
+    Mean = mean(Recall)
+    , Median = median(Recall)
+    , SD = sd(Recall)
+    , Min = min(Recall)
+    , Max = max(Recall)
+  )
+descriptives[, -1] <- printnum(descriptives[, -1])
+
+apa_table(
+  descriptives
+  , caption = "Descriptive statistics of correct recall by dosage."
+  , note = "This table was created with apa_table()."
+  , escape = TRUE
+)
+```
+
+
+
+\newpage
+# Der YAML Header ist ein weiterer Anhang
+
+```` 
+---
+title             : "APA und die deutsche Sprache"
+shorttitle        : "APA und die deutsche Sprache"
+
+author: 
+  - name          : "Prof. Dr. Stephan Huber"
+    affiliation   : "1,2"
+    corresponding : no    # Define only one corresponding author
+    address       : "Im Mediapark 4e"
+    email         : "stephan.huber@hs-fresenius.de"
+
+affiliation:
+  - id            : "1"
+    institution   : "Fresenius University of Applied Science"
+  - id            : "2"
+    institution   : "Charlotte Fresenius University"
+
+authornote: |
+  Alle Dateien im Zusammenhang mit diesem Document findet man hier: [https://github.com/hubchev/ewa](https://github.com/hubchev/ewa). Kontakt bitte über `stephan.huber@hs-fresenius.de` aufnehmen.
+
+abstract: |
+  In diesem Dokument zeige ich wie ein APA konformes Manusskript erstellt werden kann. Hierzu passe ich die Vorlage des 'papaja' packages [@R-papaja] an.
+
+keywords          : "papaja, APA"
+
+floatsintext      : yes
+linenumbers       : no
+draft             : no
+mask              : no
+numbersections    : yes
+
+figurelist        : yes
+tablelist         : yes
+footnotelist      : no
+
+classoption       : "doc"
+toc               : yes
+
+output            : 
+  papaja::apa6_pdf:
+    citation_package: biblatex
+
+csl               : "apa.csl"
+header-includes:
+  - \usepackage[backend=biber,style=apa]{biblatex} 
+  - \DeclareLanguageMapping{german}{german-apa}
+  - \addbibresource{lit.bib}
+  - \DefineBibliographyStrings{ngerman}{references = {Literaturverzeichnis}}
+  - \usepackage{times}
+  - \babelprovide[main,import]{ngerman}
+  - \usepackage{floatrow}
+  - \floatsetup[figure]{capposition=top}
+  - \floatsetup[table]{capposition=top}
+---
+````
+
+
