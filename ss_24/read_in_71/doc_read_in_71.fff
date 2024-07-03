@@ -1,0 +1,30 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{fig-df_com_gglik}Antwortverteilung zu den gestellten
+Fragen (df\_complete)}
+
+\centering{
+
+\includegraphics{doc_read_in_71_files/figure-pdf/fig-df_com_gglik-1.pdf}
+
+}
+
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{fig-df_cle_gglik}Antwortverteilung zu den gestellten
+Fragen (df\_cleaned)}
+
+\centering{
+
+\includegraphics{doc_read_in_71_files/figure-pdf/fig-df_cle_gglik-1.pdf}
+
+}
+
+\end{figure*}

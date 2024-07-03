@@ -1,0 +1,537 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Ausschnitt des Rohdatensatz}{\label{tbl-df_raw_glim}}}}
+
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+}                     %% tabularray inner close
+\toprule
+ID & Group & Item.1 & Item.2 & Item.3 & Item.4 & Item.5 & Item.6 & Item.7 & Item.8 & Item.9 \\ \midrule %% TinyTableHeader
+1 & 1 & 4 & 3 & 4 & 5 & 2 & 3 & 2 & 2 & 3 \\
+2 & 0 & 4 & 4 & 3 & 4 & 4 & 5 & 3 & 3 & 4 \\
+3 & 1 & 1 & 3 & 4 & 3 & 3 & 4 & 4 & 3 & 4 \\
+4 & 1 & 3 & 3 & 5 & 3 & 2 & 3 & 1 & 3 & 2 \\
+5 & 1 & 3 & 3 & 2 & 5 & 4 & 4 & 4 & 3 & 4 \\
+6 & 0 & 3 & 3 & 2 & 2 & 2 & 3 & 2 & 2 & 2 \\
+\bottomrule
+\end{tblr}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Unterschiedliche Werte in den
+Variablen}{\label{tbl-df_raw_unique}}}}
+
+\begin{longtable*}{ll}
+\toprule
+Attribute & Values\\
+\midrule
+Group & 0, 1\\
+Item.1 & 1, 2, 3, 4, 5\\
+Item.2 & 1, 2, 3, 4, 5, 22\\
+Item.3 & 1, 2, 3, 4, 5, 44\\
+Item.4 & 1, 2, 3, 4, 5, 44\\
+\addlinespace
+Item.5 & 1, 2, 3, 4, 5\\
+Item.6 & 1, 2, 3, 4, 5\\
+Item.7 & 1, 2, 3, 4, 5\\
+Item.8 & 1, 2, 3, 4, 5, 6, 33\\
+Item.9 & 1, 2, 3, 4, 5, 33\\
+\addlinespace
+Item.10 & 1, 2, 3, 4, 5, 44\\
+Item.11 & 1, 2, 3, 4, 5, 6\\
+Item.12 & 1, 2, 3, 4, 5\\
+Item.13 & 1, 2, 3, 4, 5\\
+Item.14 & 1, 2, 3, 4, 5, 33\\
+\addlinespace
+Item.15 & 1, 2, 3, 4, 5, 6\\
+Item.16 & 1, 2, 3, 4, 5, 6\\
+Item.17 & 1, 2, 3, 4, 5, 6\\
+Item.18 & 1, 2, 3, 4, 5\\
+Item.19 & 1, 2, 3, 4, 5, 6\\
+\addlinespace
+Item.20 & 1, 2, 3, 4, 5\\
+Item.21 & 1, 2, 3, 4, 5, 22\\
+\bottomrule
+\end{longtable*}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Häufigkeitstabelle der unterschiedlichen Werte (pro
+item)}{\label{tbl-df_long}}}}
+
+\begin{tabular}{rrrr}
+\toprule
+long\$count & n & percent & valid\_percent\\
+\midrule
+0 & 1 & 0.0070423 & 0.0082645\\
+1 & 22 & 0.1549296 & 0.1818182\\
+2 & 21 & 0.1478873 & 0.1735537\\
+3 & 21 & 0.1478873 & 0.1735537\\
+4 & 21 & 0.1478873 & 0.1735537\\
+\addlinespace
+5 & 21 & 0.1478873 & 0.1735537\\
+6 & 6 & 0.0422535 & 0.0495868\\
+22 & 2 & 0.0140845 & 0.0165289\\
+33 & 3 & 0.0211268 & 0.0247934\\
+44 & 3 & 0.0211268 & 0.0247934\\
+\addlinespace
+NaN & 21 & 0.1478873 & NA\\
+\bottomrule
+\end{tabular}
+
+{\noindent \emph{Anmerkung.} Die Tabelle zeigt an, in wie vielen Items die jeweiligen Werte vorkommen.}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Deskriptive Statistiken zum
+Rohdatensatz}{\label{tbl-df_raw_skim}}}}
+
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+column{1}={halign=l,},
+column{2}={halign=l,},
+column{3}={halign=l,},
+column{4}={halign=l,},
+column{5}={halign=l,},
+column{6}={halign=l,},
+column{7}={halign=l,},
+column{8}={halign=l,},
+column{9}={halign=l,},
+}                     %% tabularray inner close
+\toprule
+& Unique & Missing Pct. & Mean & SD & Min & Median & Max & Histogram \\ \midrule %% TinyTableHeader
+ID & 70 & 0 & 35.5 & 20.4 & 1.0 & 35.5 & 70.0 & \includegraphics[height=1em]{tinytable_assets/id11scwpt8r52ssxh2rhy9.png} \\
+Group & 2 & 0 & 0.5 & 0.5 & 0.0 & 0.0 & 1.0 & \includegraphics[height=1em]{tinytable_assets/idityrkjuli2htn49bgyr0.png} \\
+Item.1 & 6 & 4 & 2.9 & 1.0 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/idf2t6urjousa404ro5moc.png} \\
+Item.2 & 7 & 1 & 3.1 & 2.5 & 1.0 & 3.0 & 22.0 & \includegraphics[height=1em]{tinytable_assets/ide3ueiyqfnhynj1nelr2y.png} \\
+Item.3 & 7 & 3 & 3.4 & 5.1 & 1.0 & 3.0 & 44.0 & \includegraphics[height=1em]{tinytable_assets/idoktmhwgtmqgz59frw6j9.png} \\
+Item.4 & 7 & 3 & 3.8 & 5.1 & 1.0 & 3.0 & 44.0 & \includegraphics[height=1em]{tinytable_assets/idrmnoumjmzrphz7mhslhz.png} \\
+Item.5 & 6 & 3 & 3.0 & 1.0 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/id29n5fe15gumd4nue9w7a.png} \\
+Item.6 & 6 & 1 & 3.1 & 1.1 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/idj2ummchfbrk13e7hkjvi.png} \\
+Item.7 & 6 & 1 & 2.9 & 1.1 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/idf7xa3r1xw78c44gskftv.png} \\
+Item.8 & 8 & 1 & 3.4 & 3.7 & 1.0 & 3.0 & 33.0 & \includegraphics[height=1em]{tinytable_assets/idwgtaz5017t0jq84xb5vv.png} \\
+Item.9 & 7 & 3 & 3.4 & 3.8 & 1.0 & 3.0 & 33.0 & \includegraphics[height=1em]{tinytable_assets/id0kqsl3qdfx3c7a9ykdpw.png} \\
+Item.10 & 7 & 1 & 3.9 & 5.0 & 1.0 & 3.0 & 44.0 & \includegraphics[height=1em]{tinytable_assets/idb8uxsdksr4y9r42trhe0.png} \\
+Item.11 & 7 & 3 & 2.8 & 1.2 & 1.0 & 3.0 & 6.0 & \includegraphics[height=1em]{tinytable_assets/id21dvfgtw7tomgmnqhwow.png} \\
+Item.12 & 6 & 1 & 2.9 & 1.0 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/idkw5185sef17r2tdz7vml.png} \\
+Item.13 & 6 & 4 & 2.9 & 1.0 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/id2s2sa1ajb60krfbfhbvq.png} \\
+Item.14 & 7 & 1 & 3.4 & 3.8 & 1.0 & 3.0 & 33.0 & \includegraphics[height=1em]{tinytable_assets/id794h8u3n46i61rdq8y3s.png} \\
+Item.15 & 7 & 3 & 3.2 & 1.2 & 1.0 & 3.0 & 6.0 & \includegraphics[height=1em]{tinytable_assets/idt61rvtytvs3dchy34tf1.png} \\
+Item.16 & 7 & 4 & 2.9 & 1.1 & 1.0 & 3.0 & 6.0 & \includegraphics[height=1em]{tinytable_assets/ida3z8czcjkqlz66jge6u3.png} \\
+Item.17 & 7 & 1 & 3.0 & 1.1 & 1.0 & 3.0 & 6.0 & \includegraphics[height=1em]{tinytable_assets/id5i7bayj25yy0k4n8mhci.png} \\
+Item.18 & 6 & 1 & 3.1 & 1.0 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/idvjxeljerqr9f5s1rn5oe.png} \\
+Item.19 & 7 & 1 & 3.0 & 1.1 & 1.0 & 3.0 & 6.0 & \includegraphics[height=1em]{tinytable_assets/idttiaf5t4o2dr44a7hflf.png} \\
+Item.20 & 6 & 1 & 3.1 & 1.1 & 1.0 & 3.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/id4nixgaenq9wsz5oa253b.png} \\
+Item.21 & 7 & 1 & 3.1 & 2.6 & 1.0 & 3.0 & 22.0 & \includegraphics[height=1em]{tinytable_assets/idqc47e4ehdk7trxukfahj.png} \\
+\bottomrule
+\end{tblr}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Unterschiedliche Werte in den Variablen
+(df\_complete)}{\label{tbl-df_com_unique}}}}
+
+\begin{longtable*}{ll}
+\toprule
+Attribute & Values\\
+\midrule
+group & 0, 1\\
+item\_1 & 1, 2, 3, 4, 5\\
+item\_2 & 1, 2, 3, 4, 5\\
+item\_3 & 1, 2, 3, 4, 5\\
+item\_4 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_5 & 1, 2, 3, 4, 5\\
+item\_6 & 1, 2, 3, 4, 5\\
+item\_7 & 1, 2, 3, 4, 5\\
+item\_8 & 1, 2, 3, 4, 5\\
+item\_9 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_10 & 1, 2, 3, 4, 5\\
+item\_11 & 1, 2, 3, 4, 5\\
+item\_12 & 1, 2, 3, 4, 5\\
+item\_13 & 1, 2, 3, 4, 5\\
+item\_14 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_15 & 1, 2, 3, 4, 5\\
+item\_16 & 1, 2, 3, 4, 5\\
+item\_17 & 1, 2, 3, 4, 5\\
+item\_18 & 1, 2, 3, 4, 5\\
+item\_19 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_20 & 1, 2, 3, 4, 5\\
+item\_21 & 1, 2, 3, 4, 5\\
+outlier & 1, 4, 5\\
+has\_outlier & FALSE\\
+count\_larger\_5 & 0\\
+\addlinespace
+count\_typos & 0\\
+has\_larger\_5\_notypos & FALSE\\
+has\_typos & FALSE\\
+has\_nas & FALSE\\
+complete & TRUE\\
+\bottomrule
+\end{longtable*}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Unterschiedliche Werte in den Variablen
+(df\_cleaned)}{\label{tbl-df_cle_unique}}}}
+
+\begin{longtable*}{ll}
+\toprule
+Attribute & Values\\
+\midrule
+group & 0, 1\\
+item\_1 & 1, 2, 3, 4, 5\\
+item\_2 & 1, 2, 3, 4, 5\\
+item\_3 & 1, 2, 3, 4, 5\\
+item\_4 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_5 & 1, 2, 3, 4, 5\\
+item\_6 & 1, 2, 3, 4, 5\\
+item\_7 & 1, 2, 3, 4, 5\\
+item\_8 & 1, 2, 3, 4, 5\\
+item\_9 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_10 & 1, 2, 3, 4, 5\\
+item\_11 & 1, 2, 3, 4, 5\\
+item\_12 & 1, 2, 3, 4, 5\\
+item\_13 & 1, 2, 3, 4, 5\\
+item\_14 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_15 & 1, 2, 3, 4, 5\\
+item\_16 & 1, 2, 3, 4, 5\\
+item\_17 & 1, 2, 3, 4, 5\\
+item\_18 & 1, 2, 3, 4, 5\\
+item\_19 & 1, 2, 3, 4, 5\\
+\addlinespace
+item\_20 & 1, 2, 3, 4, 5\\
+item\_21 & 1, 2, 3, 4, 5\\
+outlier & 1, 4, 5, 6, 22, 33, 44\\
+has\_outlier & FALSE, TRUE\\
+count\_larger\_5 & 0, 1, 2\\
+\addlinespace
+count\_typos & 0, 1\\
+has\_larger\_5\_notypos & FALSE, TRUE\\
+has\_typos & FALSE, TRUE\\
+has\_nas & FALSE, TRUE\\
+complete & FALSE, TRUE\\
+\bottomrule
+\end{longtable*}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Deskriptive Statistiken zum Rohdatensatz
+(df\_complete)}{\label{tbl-df_com_skim}}}}
+
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{7}={1,2,3,4,5,6,7,8,9}{solid, 0.1em, black},
+}                     %% tabularray inner close
+\toprule
+& Unique & Missing Pct. & Mean & SD & Min & Median & Max & Histogram \\ \midrule %% TinyTableHeader
+id & 48 & 0 & 33.8 & 20.8 & 2.0 & 31.0 & 70.0 & \includegraphics[height=1em]{tinytable_assets/id4rcix9za34gxp2zswqyi.png} \\
+group & 2 & 0 & 0.5 & 0.5 & 0.0 & 0.5 & 1.0 & \includegraphics[height=1em]{tinytable_assets/idnfq5eh51ubjryzgdztba.png} \\
+outlier & 3 & 0 & 4.7 & 0.7 & 1.0 & 5.0 & 5.0 & \includegraphics[height=1em]{tinytable_assets/id7cz0d3pdhwwme5j30iud.png} \\
+count\_larger\_5 & 1 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & \includegraphics[height=1em]{tinytable_assets/id9dgrodpfkvenlukblhe9.png} \\
+count\_typos & 1 & 0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & \includegraphics[height=1em]{tinytable_assets/id4rcs7n2wjaox2j7rs1vo.png} \\
+&    & N & \% &  &  &  &  &  \\
+item\_1 & Stimme überhaupt nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Stimme nicht zu & 8 & 16.7 &  &  &  &  &  \\
+& Neutral & 23 & 47.9 &  &  &  &  &  \\
+& Stimme zu & 8 & 16.7 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 6.2 &  &  &  &  &  \\
+item\_2 & Stimme überhaupt nicht zu & 4 & 8.3 &  &  &  &  &  \\
+& Stimme nicht zu & 13 & 27.1 &  &  &  &  &  \\
+& Neutral & 22 & 45.8 &  &  &  &  &  \\
+& Stimme zu & 7 & 14.6 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_3 & Stimme überhaupt nicht zu & 3 & 6.2 &  &  &  &  &  \\
+& Stimme nicht zu & 16 & 33.3 &  &  &  &  &  \\
+& Neutral & 16 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 8 & 16.7 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 5 & 10.4 &  &  &  &  &  \\
+item\_4 & Stimme überhaupt nicht zu & 5 & 10.4 &  &  &  &  &  \\
+& Stimme nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Neutral & 22 & 45.8 &  &  &  &  &  \\
+& Stimme zu & 12 & 25.0 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 6.2 &  &  &  &  &  \\
+item\_5 & Stimme überhaupt nicht zu & 2 & 4.2 &  &  &  &  &  \\
+& Stimme nicht zu & 15 & 31.2 &  &  &  &  &  \\
+& Neutral & 15 & 31.2 &  &  &  &  &  \\
+& Stimme zu & 14 & 29.2 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_6 & Stimme überhaupt nicht zu & 5 & 10.4 &  &  &  &  &  \\
+& Stimme nicht zu & 10 & 20.8 &  &  &  &  &  \\
+& Neutral & 13 & 27.1 &  &  &  &  &  \\
+& Stimme zu & 13 & 27.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 7 & 14.6 &  &  &  &  &  \\
+item\_7 & Stimme überhaupt nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Stimme nicht zu & 14 & 29.2 &  &  &  &  &  \\
+& Neutral & 15 & 31.2 &  &  &  &  &  \\
+& Stimme zu & 10 & 20.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 6.2 &  &  &  &  &  \\
+item\_8 & Stimme überhaupt nicht zu & 5 & 10.4 &  &  &  &  &  \\
+& Stimme nicht zu & 10 & 20.8 &  &  &  &  &  \\
+& Neutral & 23 & 47.9 &  &  &  &  &  \\
+& Stimme zu & 9 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 2.1 &  &  &  &  &  \\
+item\_9 & Stimme überhaupt nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Stimme nicht zu & 9 & 18.8 &  &  &  &  &  \\
+& Neutral & 18 & 37.5 &  &  &  &  &  \\
+& Stimme zu & 13 & 27.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_10 & Stimme überhaupt nicht zu & 3 & 6.2 &  &  &  &  &  \\
+& Stimme nicht zu & 9 & 18.8 &  &  &  &  &  \\
+& Neutral & 15 & 31.2 &  &  &  &  &  \\
+& Stimme zu & 13 & 27.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 8 & 16.7 &  &  &  &  &  \\
+item\_11 & Stimme überhaupt nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Stimme nicht zu & 12 & 25.0 &  &  &  &  &  \\
+& Neutral & 18 & 37.5 &  &  &  &  &  \\
+& Stimme zu & 11 & 22.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 2.1 &  &  &  &  &  \\
+item\_12 & Stimme überhaupt nicht zu & 3 & 6.2 &  &  &  &  &  \\
+& Stimme nicht zu & 15 & 31.2 &  &  &  &  &  \\
+& Neutral & 19 & 39.6 &  &  &  &  &  \\
+& Stimme zu & 7 & 14.6 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 8.3 &  &  &  &  &  \\
+item\_13 & Stimme überhaupt nicht zu & 2 & 4.2 &  &  &  &  &  \\
+& Stimme nicht zu & 14 & 29.2 &  &  &  &  &  \\
+& Neutral & 21 & 43.8 &  &  &  &  &  \\
+& Stimme zu & 9 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_14 & Stimme überhaupt nicht zu & 7 & 14.6 &  &  &  &  &  \\
+& Stimme nicht zu & 8 & 16.7 &  &  &  &  &  \\
+& Neutral & 15 & 31.2 &  &  &  &  &  \\
+& Stimme zu & 15 & 31.2 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 6.2 &  &  &  &  &  \\
+item\_15 & Stimme überhaupt nicht zu & 4 & 8.3 &  &  &  &  &  \\
+& Stimme nicht zu & 9 & 18.8 &  &  &  &  &  \\
+& Neutral & 14 & 29.2 &  &  &  &  &  \\
+& Stimme zu & 17 & 35.4 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 8.3 &  &  &  &  &  \\
+item\_16 & Stimme überhaupt nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Stimme nicht zu & 15 & 31.2 &  &  &  &  &  \\
+& Neutral & 16 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 9 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_17 & Stimme überhaupt nicht zu & 3 & 6.2 &  &  &  &  &  \\
+& Stimme nicht zu & 20 & 41.7 &  &  &  &  &  \\
+& Neutral & 8 & 16.7 &  &  &  &  &  \\
+& Stimme zu & 12 & 25.0 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 5 & 10.4 &  &  &  &  &  \\
+item\_18 & Stimme überhaupt nicht zu & 4 & 8.3 &  &  &  &  &  \\
+& Stimme nicht zu & 6 & 12.5 &  &  &  &  &  \\
+& Neutral & 22 & 45.8 &  &  &  &  &  \\
+& Stimme zu & 14 & 29.2 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 4.2 &  &  &  &  &  \\
+item\_19 & Stimme überhaupt nicht zu & 7 & 14.6 &  &  &  &  &  \\
+& Stimme nicht zu & 8 & 16.7 &  &  &  &  &  \\
+& Neutral & 16 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 16 & 33.3 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 2.1 &  &  &  &  &  \\
+item\_20 & Stimme überhaupt nicht zu & 7 & 14.6 &  &  &  &  &  \\
+& Stimme nicht zu & 12 & 25.0 &  &  &  &  &  \\
+& Neutral & 12 & 25.0 &  &  &  &  &  \\
+& Stimme zu & 12 & 25.0 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 5 & 10.4 &  &  &  &  &  \\
+item\_21 & Stimme überhaupt nicht zu & 5 & 10.4 &  &  &  &  &  \\
+& Stimme nicht zu & 16 & 33.3 &  &  &  &  &  \\
+& Neutral & 14 & 29.2 &  &  &  &  &  \\
+& Stimme zu & 9 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 8.3 &  &  &  &  &  \\
+& FALSE & 48 & 100.0 &  &  &  &  &  \\
+& FALSE & 48 & 100.0 &  &  &  &  &  \\
+& FALSE & 48 & 100.0 &  &  &  &  &  \\
+& FALSE & 48 & 100.0 &  &  &  &  &  \\
+& TRUE & 48 & 100.0 &  &  &  &  &  \\
+\bottomrule
+\end{tblr}
+
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\caption{{Deskriptive Statistiken zum Rohdatensatz
+(df\_cleaned)}{\label{tbl-df_cle_skim}}}}
+
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{7}={1,2,3,4,5,6,7,8,9}{solid, 0.1em, black},
+}                     %% tabularray inner close
+\toprule
+& Unique & Missing Pct. & Mean & SD & Min & Median & Max & Histogram \\ \midrule %% TinyTableHeader
+id & 69 & 0 & 35.1 & 20.2 & 1.0 & 35.0 & 70.0 & \includegraphics[height=1em]{tinytable_assets/idt1haazbr0lf65n8vnw3s.png} \\
+group & 2 & 0 & 0.5 & 0.5 & 0.0 & 0.0 & 1.0 & \includegraphics[height=1em]{tinytable_assets/idktgms6dc18jcc7391zhh.png} \\
+outlier & 7 & 0 & 8.2 & 10.0 & 1.0 & 5.0 & 44.0 & \includegraphics[height=1em]{tinytable_assets/idpv3djg1zbyb9xz4ajw7s.png} \\
+count\_larger\_5 & 3 & 0 & 0.2 & 0.5 & 0.0 & 0.0 & 2.0 & \includegraphics[height=1em]{tinytable_assets/idtpc5opfh2x1xv9xhupc3.png} \\
+count\_typos & 2 & 0 & 0.1 & 0.3 & 0.0 & 0.0 & 1.0 & \includegraphics[height=1em]{tinytable_assets/idz4cc64jugq4bgs7o0z7s.png} \\
+&    & N & \% &  &  &  &  &  \\
+item\_1 & Stimme überhaupt nicht zu & 7 & 10.1 &  &  &  &  &  \\
+& Stimme nicht zu & 12 & 17.4 &  &  &  &  &  \\
+& Neutral & 30 & 43.5 &  &  &  &  &  \\
+& Stimme zu & 14 & 20.3 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 5.8 &  &  &  &  &  \\
+item\_2 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 19 & 27.5 &  &  &  &  &  \\
+& Neutral & 30 & 43.5 &  &  &  &  &  \\
+& Stimme zu & 12 & 17.4 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 4.3 &  &  &  &  &  \\
+item\_3 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 24 & 34.8 &  &  &  &  &  \\
+& Neutral & 21 & 30.4 &  &  &  &  &  \\
+& Stimme zu & 13 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 5 & 7.2 &  &  &  &  &  \\
+item\_4 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 9 & 13.0 &  &  &  &  &  \\
+& Neutral & 30 & 43.5 &  &  &  &  &  \\
+& Stimme zu & 18 & 26.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 6 & 8.7 &  &  &  &  &  \\
+item\_5 & Stimme überhaupt nicht zu & 3 & 4.3 &  &  &  &  &  \\
+& Stimme nicht zu & 23 & 33.3 &  &  &  &  &  \\
+& Neutral & 20 & 29.0 &  &  &  &  &  \\
+& Stimme zu & 18 & 26.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 5.8 &  &  &  &  &  \\
+item\_6 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 15 & 21.7 &  &  &  &  &  \\
+& Neutral & 25 & 36.2 &  &  &  &  &  \\
+& Stimme zu & 16 & 23.2 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 8 & 11.6 &  &  &  &  &  \\
+item\_7 & Stimme überhaupt nicht zu & 8 & 11.6 &  &  &  &  &  \\
+& Stimme nicht zu & 19 & 27.5 &  &  &  &  &  \\
+& Neutral & 23 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 13 & 18.8 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 6 & 8.7 &  &  &  &  &  \\
+item\_8 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 14 & 20.3 &  &  &  &  &  \\
+& Neutral & 31 & 44.9 &  &  &  &  &  \\
+& Stimme zu & 17 & 24.6 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 1.4 &  &  &  &  &  \\
+item\_9 & Stimme überhaupt nicht zu & 6 & 8.7 &  &  &  &  &  \\
+& Stimme nicht zu & 12 & 17.4 &  &  &  &  &  \\
+& Neutral & 30 & 43.5 &  &  &  &  &  \\
+& Stimme zu & 18 & 26.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 2 & 2.9 &  &  &  &  &  \\
+item\_10 & Stimme überhaupt nicht zu & 4 & 5.8 &  &  &  &  &  \\
+& Stimme nicht zu & 13 & 18.8 &  &  &  &  &  \\
+& Neutral & 23 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 18 & 26.1 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 11 & 15.9 &  &  &  &  &  \\
+item\_11 & Stimme überhaupt nicht zu & 12 & 17.4 &  &  &  &  &  \\
+& Stimme nicht zu & 13 & 18.8 &  &  &  &  &  \\
+& Neutral & 23 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 17 & 24.6 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 1.4 &  &  &  &  &  \\
+item\_12 & Stimme überhaupt nicht zu & 4 & 5.8 &  &  &  &  &  \\
+& Stimme nicht zu & 20 & 29.0 &  &  &  &  &  \\
+& Neutral & 27 & 39.1 &  &  &  &  &  \\
+& Stimme zu & 12 & 17.4 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 6 & 8.7 &  &  &  &  &  \\
+item\_13 & Stimme überhaupt nicht zu & 4 & 5.8 &  &  &  &  &  \\
+& Stimme nicht zu & 18 & 26.1 &  &  &  &  &  \\
+& Neutral & 29 & 42.0 &  &  &  &  &  \\
+& Stimme zu & 12 & 17.4 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 5.8 &  &  &  &  &  \\
+item\_14 & Stimme überhaupt nicht zu & 8 & 11.6 &  &  &  &  &  \\
+& Stimme nicht zu & 14 & 20.3 &  &  &  &  &  \\
+& Neutral & 23 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 21 & 30.4 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 4.3 &  &  &  &  &  \\
+item\_15 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 16 & 23.2 &  &  &  &  &  \\
+& Neutral & 18 & 26.1 &  &  &  &  &  \\
+& Stimme zu & 22 & 31.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 6 & 8.7 &  &  &  &  &  \\
+item\_16 & Stimme überhaupt nicht zu & 7 & 10.1 &  &  &  &  &  \\
+& Stimme nicht zu & 18 & 26.1 &  &  &  &  &  \\
+& Neutral & 23 & 33.3 &  &  &  &  &  \\
+& Stimme zu & 14 & 20.3 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 4 & 5.8 &  &  &  &  &  \\
+item\_17 & Stimme überhaupt nicht zu & 3 & 4.3 &  &  &  &  &  \\
+& Stimme nicht zu & 25 & 36.2 &  &  &  &  &  \\
+& Neutral & 19 & 27.5 &  &  &  &  &  \\
+& Stimme zu & 16 & 23.2 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 5 & 7.2 &  &  &  &  &  \\
+item\_18 & Stimme überhaupt nicht zu & 5 & 7.2 &  &  &  &  &  \\
+& Stimme nicht zu & 9 & 13.0 &  &  &  &  &  \\
+& Neutral & 30 & 43.5 &  &  &  &  &  \\
+& Stimme zu & 22 & 31.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 3 & 4.3 &  &  &  &  &  \\
+item\_19 & Stimme überhaupt nicht zu & 9 & 13.0 &  &  &  &  &  \\
+& Stimme nicht zu & 11 & 15.9 &  &  &  &  &  \\
+& Neutral & 25 & 36.2 &  &  &  &  &  \\
+& Stimme zu & 22 & 31.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 1 & 1.4 &  &  &  &  &  \\
+item\_20 & Stimme überhaupt nicht zu & 7 & 10.1 &  &  &  &  &  \\
+& Stimme nicht zu & 15 & 21.7 &  &  &  &  &  \\
+& Neutral & 19 & 27.5 &  &  &  &  &  \\
+& Stimme zu & 22 & 31.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 6 & 8.7 &  &  &  &  &  \\
+item\_21 & Stimme überhaupt nicht zu & 7 & 10.1 &  &  &  &  &  \\
+& Stimme nicht zu & 23 & 33.3 &  &  &  &  &  \\
+& Neutral & 21 & 30.4 &  &  &  &  &  \\
+& Stimme zu & 11 & 15.9 &  &  &  &  &  \\
+& Stimme voll und ganz zu & 7 & 10.1 &  &  &  &  &  \\
+has\_outlier & FALSE & 56 & 81.2 &  &  &  &  &  \\
+& TRUE & 13 & 18.8 &  &  &  &  &  \\
+has\_larger\_5\_notypos & FALSE & 63 & 91.3 &  &  &  &  &  \\
+& TRUE & 6 & 8.7 &  &  &  &  &  \\
+has\_typos & FALSE & 61 & 88.4 &  &  &  &  &  \\
+& TRUE & 8 & 11.6 &  &  &  &  &  \\
+has\_nas & FALSE & 58 & 84.1 &  &  &  &  &  \\
+& TRUE & 11 & 15.9 &  &  &  &  &  \\
+complete & FALSE & 21 & 30.4 &  &  &  &  &  \\
+& TRUE & 48 & 69.6 &  &  &  &  &  \\
+\bottomrule
+\end{tblr}
+
+\end{table*}

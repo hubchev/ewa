@@ -1,0 +1,90 @@
+rm(list = ls())
+
+df_raw <- read.delim("Dataset 71.txt")
+
+uv <- df_raw |> 
+  select(-ID) |> 
+  as.matrix() |> 
+  as.vector() |> 
+  unique()
+
+uv_item <- df_raw |> 
+  map(~ unique(.)) |> 
+  tibble()
+library("knitr")
+library("kableExtra")
+
+
+uv_item_pretty <-  uv_item |> 
+  mutate(across(everything(), ~ sapply(., function(x) paste(x, collapse = ", "))))
+
+# Create and display the table using kable
+uv_item_pretty |> 
+  kable("latex", booktabs = TRUE) |> 
+  kable_styling(latex_options = c("striped", "hold_position"))
+
+
+
+dd <- uv_item |> 
+  mutate(values = map_chr(values, ~ paste(.x, collapse = ", ")))
+kable(uv_item)
+
+
+long <- df_raw  |> 
+  pivot_longer(!ID, names_to = "item", values_to = "count") |> 
+  distinct(item, count) |> 
+  arrange(item, count) 
+# |>
+#   pivot_wider(names_from = item, values_from = count, names_prefix = "v_")
+  # pivot_wider(names_from = item, values_from = count)
+long
+
+for (val in uv) {
+  val_n <- paste0("v_", val)
+  long <- long |> 
+    mutate(!!val_n := NA) |> 
+    mutate(!!val_n := if_else(count == val, 1, 0))
+}
+
+
+
+
+
+
+
+for (count in uv) {
+  new_col_name <- paste0("count_", count)
+  long[[new_col_name]] <- NA
+}
+
+
+
+
+
+
+
+
+
+
+df <- long
+
+
+
+
+df <- df %>%
+  mutate(across(everything(), as.character)) %>%
+  mutate(across(everything(), as.numeric)) %>%
+  rowwise() %>%
+  mutate(across(starts_with("count_"), ~ NA)) %>%
+  ungroup()
+
+unique_counts <- unique(df$count)
+
+for (count in unique_counts) {
+  new_col_name <- paste0("count_", count)
+  df <- df %>%
+    mutate(!!new_col_name := NA)
+}
+
+
+

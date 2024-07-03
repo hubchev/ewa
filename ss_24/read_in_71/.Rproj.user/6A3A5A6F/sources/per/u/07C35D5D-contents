@@ -1,0 +1,49 @@
+# df_raw |>
+#   tabyl(ID, long$count)
+# 
+# tabyl(long$count)
+# uv_item |> 
+#   tabyl(all_of(Attribute), all_of(count))
+# 
+# outlier == 0
+# 
+# df_complete |> 
+#   select(starts_with("item_")) |> 
+#   
+  
+top_levels(df_complete$item_2, n=2)
+
+library("ggstats")
+
+
+# Labels definieren
+likert_levels <- c(
+  "Strongly disagree",
+  "Disagree",
+  "Neither agree nor disagree",
+  "Agree",
+  "Strongly agree"
+)
+likert_labels <- c(
+  "Stimme überhaupt nicht zu" = 1,
+  "Stimme nicht zu" = 2,
+  "Neutral" = 3,
+  "Stimme zu" = 4,
+  "Stimme voll und ganz zu" = 5
+)
+apply_likert_labels <- function(x) {
+  labelled(x, labels = likert_labels)
+}
+# Alle Variablen, die mit "item_" beginnen, als Likert-Variablen kennzeichnen
+df_labelled <- df_complete |> 
+  select(starts_with("item_")) |> 
+  mutate(across(starts_with("item_"), ~ factor(.x, levels = likert_labels)))
+  
+
+
+|> 
+  mutate(across(starts_with("item_"), ~ labelled(.x, labels = likert_labels)))
+
+
+
+gglikert(df_labelled)

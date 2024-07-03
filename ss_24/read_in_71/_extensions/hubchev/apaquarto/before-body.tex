@@ -1,0 +1,20 @@
+$if(numbered-lines)$
+\linenumbers
+$endif$
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(numbered-lines)$
+\resetlinenumber[1]
+$endif$
+
+$if(indent-skip-first)$
+\makeatletter
+\b@level@one@skip=-2.5ex plus -1ex minus -.2ex
+\b@level@two@skip=-2.5ex plus -1ex minus -.2ex
+\makeatother
+\setlength\parindent{1cm}
+\setlength\parskip{0cm}
+$endif$

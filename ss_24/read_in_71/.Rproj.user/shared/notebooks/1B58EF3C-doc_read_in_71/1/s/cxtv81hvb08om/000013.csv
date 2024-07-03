@@ -1,0 +1,10 @@
+"0","uv_item <- df_raw |> 
+  select(-ID) |> 
+  map(~ unique(.) |>  sort()) |> 
+  summarise(across(starts_with(""item_""), ~ sum(is.nan(.)))) |> 
+  enframe(name = ""Attribute"", value = ""Values"") |>  
+  tibble()
+"
+"2","Error in UseMethod(""summarise"") : 
+  no applicable method for 'summarise' applied to an object of class ""list""
+"

@@ -1,0 +1,210 @@
+---
+title: "ANOVA Ergebnisse und Quarto"
+title-secondline: ""
+subtitle: "Empririsch Wissenschaftliches Arbeiten:"
+shorttitle: "ANOVA und Quarto"
+
+author: 
+  - name          : "Prof. Dr. Stephan Huber"
+    affiliation   : "1,2"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Im Mediapark 4e"
+    email         : "stephan.huber@hs-fresenius.de"
+
+university: "Charlotte Fresenius Hochschule"
+studiengang: "Studiengang: Psychologie (B. Sc.)"
+place: "Studienort: Köln"
+
+gutachter: "---"
+date: today
+date-format: "DD.MM.YYYY"
+
+
+semester-eins: ""
+author-zwei: ""
+semester-zwei: ""
+author-drei: ""
+semester-drei: ""
+bibliography: literatur.bib
+# csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
+format:
+  apaquarto-pdf:
+    documentmode: stu
+toc: true
+floatsintext: true
+number-sections: false
+a4paper: true
+fontsize: 12pt
+lang: de
+---
+
+
+# Zusammenfassung {.unnumbered}
+
+\noindent 
+In dieser Arbeit illustriere ich den Prozess der Erstellung ansprechender Tabellen und Grafiken, die sich auf die ANOVA beziehen. Die Arbeit hält sich an den APA-Stil und verwendet die Quarto-Vorlage^[Sie [https://github.com/hubchev/temp_apa_de](https://github.com/hubchev/temp_apa_de).].
+Insbesondere zeige ich den vollständigen Datensatz in @tbl-tabinspect und @tbl-tabinspect2. 
+@tbl-tabsumstat enthält die Zusammenfassungsstatistiken für alle Variablen und 
+@tbl-tabsummary für alle Werte der Kombinationen der Variablen `modus` und `kognition`.
+@tbl-tabanova zeigt die ANOVA-Ergebnisse.
+@tbl-tabanovaext zeigt ebenfalls die ANOVA-Ergebnisse, jedoch mit mehr Interaktionen.
+@fig-aboxplot zeigt Boxplots für alle Kombinationen der Variablen `modus` und `kognition`.
+@fig-iplotdauermod zeigt ein Interaktionsdiagramm von `dauer` und `modus`.
+@fig-iplotdauerkog zeigt ein Interaktionsdiagramm von `dauer` und `kognition`.
+@fig-df3boxplot zeigt Boxplots für alle Kombinationen der Variablen `modus`, `kognition` und Interviewer.
+
+
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE}
+# Preamble of the my script
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(tidyverse, janitor, psych, magick, flextable, 
+               car, knitr, papaja, kableExtra, stargazer)
+rm(list = ls())
+
+# Data Preperation
+
+# Read in data
+ModKogDat <- read.csv("data/ModKogDat.csv", header=TRUE, sep=",") 
+
+# clean data
+df <- ModKogDat |> 
+  mutate(
+    modus = as.factor(modus),
+    kognition = as.factor(kognition)
+    ) |> 
+  group_by(modus, kognition) |> 
+  mutate(
+    id_num = cur_group_id(),
+    m_str = substr(modus, 1, 2),
+    k_str = substr(kognition, 1, 2),
+    id = paste(m_str, k_str, sep = "_")
+  ) |> 
+  select(-m_str, -k_str) |> 
+  tibble() |> 
+  mutate(rownumber = row_number()) |> 
+  ungroup() 
+```
+
+```{r  , echo=FALSE, warning=FALSE, message=FALSE}
+#| tbl-cap: Der Datensatz
+#| label: tbl-tabinspect 
+#| echo: false
+#| apa-note: "Hier sehen sie alle 30 Beobachtungen des Datensatzes wobei die Variablen 'modus' und 'kognition' nicht angezeigt werden."
+
+t1 <- df |> 
+  select(rownumber, id_num, id,  dauer) |> 
+  relocate(rownumber, id_num, id,  dauer) |> 
+  slice(1:15) 
+
+t2 <- df |> 
+  select(rownumber, id_num, id,  dauer) |> 
+  relocate(rownumber, id_num, id, dauer) |> 
+  slice(16:30)
+
+knitr::kable(list(t1, t2), format="latex", booktabs=T)
+
+```
+
+```{r}
+#| label: tbl-tabsumstat
+#| echo: false
+#| tbl-cap: "Deskriptive Statistiken"
+#| apa-note: "Diese Tabelle enthält alle Variablen."
+tabsumstat <- df |>
+  psych::describe()   |> 
+  as_tibble(rownames="Variables")  |> 
+  select(-skew, -kurtosis, -range, -vars, -trimmed, -mad) 
+
+knitr::kable( tabsumstat, booktabs=T)
+```
+
+```{r}
+#| label: tbl-tabsummary
+#| echo: false
+#| tbl-cap: "Zusammenfassende Statistiken für die Variable `dauer`"
+#| apa-note: "Diese Tabelle enthält zusammenfassende Statistiken für jede Kombination von 'modus' und 'Kognition' ('id')."
+
+tab_summary <- df |> 
+  group_by(id) |> 
+  summarize(
+    count = n(),
+    mean = mean(dauer),
+    sd = sd(dauer),
+    "COV (sd/mean)" = sd(dauer) / mean(dauer),
+    min = min(dauer),
+    q25 = quantile(dauer, 0.25),
+    median = median(dauer),
+    q75 = quantile(dauer, 0.75),
+    max = max(dauer)
+  ) |> 
+  ungroup()
+
+knitr::kable( tab_summary, booktabs=T)
+```
+
+
+```{r}
+#| label: fig-aboxplot
+#| echo: false
+#| fig-cap: "Boxplots aller Kombinationen von 'modus' und 'kognition'"
+
+ggplot(df, aes(x=kognition, y=dauer)) +
+  geom_boxplot() + 
+  facet_wrap(~modus) 
+```
+
+::: {layout-ncol=2}
+```{r fig-iplotdauerkog,  fig.cap="Interaktionsdiagramm: 'dauer' und 'modus'", echo=FALSE}
+interaction.plot(df$kognition, df$modus, response = df$dauer)
+```
+
+
+```{r fig-iplotdauermod,  fig.cap="Interaktionsdiagramm: 'dauer' und 'kognition'", echo=FALSE}
+interaction.plot( df$modus, df$kognition, response = df$dauer)
+``` 
+:::
+
+```{r}
+#| label: tbl-tabanova
+#| echo: false
+#| tbl-cap: "Eine schöne ANOVA Tabelle"
+
+anova2_model <- aov(dauer ~ modus + kognition + modus:kognition, data = df)
+
+apa_anova <- apa_print(anova2_model)
+
+library("kableExtra")
+
+knitr::kable( apa_anova$table, booktabs=T) 
+```
+
+# Contrast Matrix
+
+```{r echo=TRUE}
+contrasts(df$kognition) <- cbind(c(2, -1, -1), c(0, 1,-1)) 
+```
+
+```{r}
+#| label: tbl-tabanovaext
+#| echo: false
+#| tbl-cap: "Eine weitere ANOVA Tabelle in kleiner Schrift"
+
+anova2_model2 <- summary.aov(anova2_model, 
+            split=list(kognition=
+                         list("altersadäquat vs beeinträchtigt"=1,
+                              "LKB vs beginnende Demenz"=2)
+                       )
+            )
+apa_anova2 <- apa_print(anova2_model2)
+
+knitr::kable( apa_anova2$table, booktabs=T) |> 
+   kable_styling(font_size = 7)
+```
+

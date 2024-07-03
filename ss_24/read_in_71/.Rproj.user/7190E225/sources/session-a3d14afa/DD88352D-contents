@@ -1,0 +1,53 @@
+# Überprüfen, ob das Paket 'pacman' installiert ist; falls nicht, installieren
+if (!require(pacman)) install.packages("pacman")
+
+# Alle geladenen Pakete entladen
+pacman::p_unload(all)
+
+# Laden der benötigten Pakete mit 'pacman'
+pacman::p_load(tidyverse, janitor, rio)
+
+# Löschen aller Objekte im aktuellen Arbeitsbereich
+rm(list = ls())
+
+# Festlegen des aktuellen Arbeitsverzeichnisses
+setwd("~/Dropbox/hsf/24-ss/ewa/ewa_papers/read_in_71/")
+
+
+# Importieren der Datei "Dataset 71.txt"
+df_raw <- import("Dataset 71.txt")
+
+# Kosmetische Bereinigungen und Umwandlungen des Datensatzes
+df_cosmetic <- df_raw |>
+  clean_names() |>
+  as_tibble() |>
+  # Ersetzen von NaN-Werten durch NA
+  mutate(across(everything(), ~ if_else(is.nan(.), NA, .))) |>
+  # Entfernen von Zeilen, bei denen alle "item_"-Spalten NA sind
+  filter(!if_all(starts_with("item_"), is.na))
+
+# Zusammenfassung des bereinigten Datensatzes
+summary(df_clean)
+# Überblick über die Struktur des bereinigten Datensatzes
+glimpse(df_clean)
+
+# Weitere Berechnungen und Mutationen am Datensatz
+df <- df_cosmetic |>
+  rowwise() |>
+  # Berechnung des größten absoluten Werts in "item_"-Spalten für jede Zeile
+  mutate(outlier = max(abs(c_across(starts_with("item_"))), na.rm = TRUE)) |>
+  # Markieren, ob ein Ausreißer (> 5) vorhanden ist
+  mutate(has_outlier = if_else(outlier > 5, TRUE, FALSE)) |>
+  # Zählen der Werte, die größer als 5 sind, für jede Zeile
+  mutate(count_larger_5 = 
+           sum(c_across(starts_with("item_")) > 5, na.rm = TRUE)) %>%
+  # Zählen der Tippfehler (11, 22, 33, 44, 55) für jede Zeile
+  mutate(count_typos = sum(c_across(starts_with("item_")) %in% 
+                             c(11, 22, 33, 44, 55), na.rm = TRUE)) |> 
+  # Markieren, ob Tippfehler vorhanden sind
+  mutate(has_typos = count_typos > 0 ) |>
+  # Markieren, ob NA-Werte in "item_"-Spalten vorhanden sind
+  mutate(has_nas = if_else(anyNA(pick(starts_with("item_"))), TRUE, FALSE)) |>
+  # Markieren, ob eine Zeile vollständig ist (keine Ausreißer und keine NAs)
+  mutate(complete = (has_outlier == FALSE | has_nas == FALSE)) |> 
+  ungroup()

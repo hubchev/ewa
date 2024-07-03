@@ -1,0 +1,88 @@
+---
+title: "XXX Titel der Hausarbeit: XXX"
+title-secondline: "XXX wenn der Titel nicht in eine Zeile passt XXX"
+subtitle: "XXX Hausarbeit im Modul XXX"
+shorttitle: "XXX Der Laufende Titel XXX"
+
+university: "Charlotte Fresenius Hochschule"
+studiengang: "Studiengang: Psychologie (B. Sc.)"
+place: "Studienort: Köln"
+
+gutachter: "Prof. Dr. XXX XXX"
+date: 07/13/2024
+date-format: "DD.MM.YYYY"
+
+author:
+  - name: "XXX XXX (Matr. Nr.: XXX)"
+    corresponding: false
+    affiliations:
+      city: Köln
+      region: NRW
+semester-eins: "XXX. Fachsemester"
+author-zwei: ""
+semester-zwei: ""
+author-drei: ""
+semester-drei: ""
+bibliography: literatur.bib
+# csl: "https://www.zotero.org/styles/deutsche-gesellschaft-fur-psychologie"
+format:
+  apaquarto-pdf:
+    documentmode: stu
+toc: true
+floatsintext: true
+number-sections: false
+a4paper: true
+fontsize: 12pt
+lang: de
+---
+
+# Zusammenfassung {.unnumbered}
+
+\noindent 
+Diese Vorlage wurde von Prof. Dr. Stephan **Huber** angefertigt. Sie baut auf die von von @Schneider2024quarto erstellte Quarto Extension `apaquarto` auf. Genauere Erläuterungen und Verwendungsbeispiele sind in der PDF "roadshow_apa_de.pdf" zu finden.
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+# Einleitung
+
+Text
+
+# Theoretischer Hintergrund
+
+Text
+
+## Unter-Abschnitt XXX
+
+Text
+
+## Unter-Abschnitt XXX
+
+Text
+
+# Methode
+
+# Ergebnis
+
+# Diskussion
+
+\newpage
+
+# Literaturverzeichnis {.unnumbered}
+
+::: {#refs}
+:::
+
+\newpage
+\appendix
+
+# Titel des ersten Anhangs 
+
+XXX Text XXX
+
+# Titel des zweiten Anhangs 
+
+XXX Text XXX
+
