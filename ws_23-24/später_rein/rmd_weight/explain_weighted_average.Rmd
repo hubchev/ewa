@@ -1,0 +1,131 @@
+---
+title: "Explain Weighted Mean"
+author: "Stephan Huber"
+date: "2023-12-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+The formula for the weighted mean is:
+\[
+\bar{x} = \frac{\sum_{i=1}^{n} w_i \cdot x_i}{\sum_{i=1}^{n} w_i}
+\]
+
+In this formula:
+
+- $\bar{x}$ represents the weighted mean.
+- $n$ is the number of observations.
+- $w_i$ represents the weight for the $i$-th observation.
+- $x_i$ represents the $i$-th observation value.
+
+
+```{r echo=TRUE}
+rm(list = ls())
+wt <- c(5, 2, 2, 1)
+x <- c(1, 2, 3, 4)
+x_mean <- mean(x)
+x_mean
+
+x_wt_mean_1 <- weighted.mean(x, wt)
+x_wt_mean_1
+```
+
+
+Let us calculate the weighted mean manually:
+
+```{r echo=TRUE}
+product <- wt*x
+# Nominator
+nom <- sum(product)
+nom
+# Denominator
+denom <- sum(wt)
+denom
+
+x_wt_mean_2 <- nom/denom
+x_wt_mean_2
+```
+## Exercise 1
+
+Below you see an alternative way to calculate the weighted mean. Can you explain it?
+
+```{r echo=TRUE}
+w_div_sumw <- wt/denom
+w_div_sumw
+multi_ww_x <- w_div_sumw * x
+multi_ww_x
+x_wt_mean_3 <- sum(multi_ww_x)
+x_wt_mean_3
+```
+
+## Exercise 2
+
+a) Calculate mean, variance, weighted mean, and the variance of the weighted mean for `x`.
+
+```{r echo=TRUE}
+results <- data.frame(
+  Statistic = c("Mean", "Variance", "Weighted Mean", "Weighted Variance"),
+  Value = c(mean(x), var(x), weighted.mean(x, wt), sum(wt * (x - weighted.mean(x, wt))^2) / sum(wt))
+)
+print(results)
+```
+
+b) Do it again but use `tidyverse` and the function `summarize`.
+
+```{r, message=FALSE}
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(tidyverse)
+```
+ 
+
+```{r, echo=TRUE}
+df <- tibble(wt = wt, x = x)
+
+summary_stats <- df %>%
+  summarize(
+    Mean = mean(x),
+    Variance = var(x),
+    Weighted_Mean = weighted.mean(x, wt),
+    Weighted_Variance = sum(wt * (x - weighted.mean(x, wt))^2) / sum(wt)
+  )
+
+# Display the table
+print(summary_stats)
+``` 
+
+## Exercise 3
+
+```{r}
+ModKogDat <- read.csv("../data/ModKogDat.csv", header=TRUE, sep=",") 
+# Read in data
+df_modkog <- ModKogDat |> 
+  mutate(
+    modus = as.factor(modus),
+    kognition = as.factor(kognition)
+    ) |> 
+  group_by(modus, kognition) |> 
+  mutate(
+    id_num = cur_group_id(),
+    m_str = substr(modus, 1, 2),
+    k_str = substr(kognition, 1, 2),
+    id = paste(m_str, k_str, sep = "_")
+  ) |> 
+  select(-m_str, -k_str) |> 
+  tibble() |> 
+  ungroup() 
+
+pacman::p_load(stats)
+interaction.plot(df_modkog$kognition, df_modkog$modus, response = df_modkog$dauer)
+interaction.plot(df_modkog$modus, df_modkog$kognition, response = df_modkog$dauer)
+
+anova2_model <- aov(dauer ~ modus + kognition + modus:kognition, data = df_modkog)
+summary(anova2_model)
+
+```
+

@@ -8,4 +8,4 @@ You can either clone the repo with
 git clone https://github.com/hubchev/ewa
 ```
 
-or you can unzip the zipped file `ewa.zip`.
+or you can click on the button `<> Code` and `Download ZIP` to get the zipped file of the repo `ewa.zip` which you can unzip.
