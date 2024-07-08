@@ -40,7 +40,7 @@ lang: de
 
 # Zusammenfassung {.unnumbered}
 
-\noindent Dieses Dokument beschreibt die Datenaufbereitung der Datei 'Dataset 71.txt' und stellt sicher, dass die Ergebnisse replizierbar sind. Alle Schritte werden mit R durchgeführt.
+\noindent Dieses Dokument beschreibt die Datenaufbereitung der Datei 'Dataset 71.txt' und stellt sicher, dass die Ergebnisse replizierbar sind. Alle Schritte werden mit R durchgeführt. Die hier angezeigten Ergebnisse wurden mit `r R.version$version.string`  durchgeführt. Genauere Information sind in @sec-sessioninfo zu finden.
 
 \newpage
 # Datenbeschreibung
@@ -272,10 +272,11 @@ df_cleaned <- df |>
 ```  
 Der Datensatz `df_cleaned` hat `r nrow(df_cleaned)` Beobachtungen.
 
-Schließlich speichere ich die aktuelle Arbeitsumgebung in einer `.RData`-Datei.
+Schließlich lösche ich alle nicht mehr benötigten Objekte aus dem Workspace und speichere ich die aktuelle Arbeitsumgebung in einer `.RData`-Datei.
 
 
 ```{r, echo=TRUE, message=FALSE}
+rm(list = setdiff(ls(), c("df_complete", "df_raw", "df_cleaned", "df")))
 save.image("data_71.RData")
 ```
 # Auswertung
@@ -351,6 +352,11 @@ uv_item |>
 <!-- # knitr::purl("doc_read_in_71.qmd") -->
 <!-- # ``` -->
 
+# Informationen zur Version von R {#sec-sessioninfo}
+
+```{r}
+sessionInfo()
+```
 
 
 
