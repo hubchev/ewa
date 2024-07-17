@@ -1,6 +1,6 @@
 ## ----echo=TRUE, message=FALSE-----------------------------------------------
 if (!require(pacman)) install.packages("pacman")
-pacman::p_load(tidyverse, janitor, psych, tinytable, ggstats,
+pacman::p_load(tidyverse, janitor, psych, tinytable, ggstats, car,
                modelsummary, knitr, kableExtra, ggpubr, rstatix, rempsyc)
 rm(list = ls())
 
