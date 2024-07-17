@@ -1,6 +1,6 @@
 ## ----echo=TRUE, message=FALSE-----------------------------------------------
 if (!require(pacman)) install.packages("pacman")
-pacman::p_load(tidyverse, janitor, psych, tinytable, ggstats, car,
+pacman::p_load(tidyverse, janitor, psych, tinytable, ggstats, car, ggstatsplot, 
                modelsummary, knitr, kableExtra, ggpubr, rstatix, rempsyc)
 rm(list = ls())
 
@@ -8,8 +8,7 @@ load("~/Dropbox/hsf/github/ewa/ss_24/read_in_71/data_71.RData")
 
 # Zuerst wandle ich die Daten etwas um, so dass ich keine Faktorvariable mehr habe:
 df_test <- df_cleaned |> 
-  mutate_at(vars(starts_with("item_")), as.double)
-
+  mutate_at(vars(starts_with("item_")), as.numeric)
 
 # ##########################
 # Ein-Stichproben t-Test
@@ -68,9 +67,14 @@ ggplot(df_test, aes(x = factor(group), y = item_1)) +
   labs(x = "Group", y = "Item 1") +
   ggtitle("Boxplot of Item 1 Across Groups")
 
+ggbetweenstats(
+  data = df_test,
+  x = group,
+  y = item_1
+)
+
 ## Wenn Normalitäts- und Varianzannahmen erfüllt sind:
 t.test(item_1 ~ group, data = df_test, var.equal = FALSE)
-
 
 # OK, aber wie testet man nun,
 # ob die Antworten aller items in den jeweiligen Gruppen gleich sind? 
@@ -88,13 +92,15 @@ ggplot(df_test_long, aes(x = factor(group), y = value)) +
   labs(x = "Group", y = "Item 1") +
   ggtitle("Boxplot of all items Across Groups")
 
+ggbetweenstats(
+  data = df_test_long,
+  x = group,
+  y = value
+)
+
 ## Wenn Normalitäts- und Varianzannahmen erfüllt sind:
-
-df_sub_complete <- df_test_long |> 
-  filter(complete == TRUE)
-
-
 t.test(value ~ group, data = df_sub_complete, var.equal = FALSE)
+
 
 # ##########################
 # Prüfung der Normalitätsannahme
