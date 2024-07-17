@@ -98,9 +98,6 @@ ggbetweenstats(
   y = value
 )
 
-## Wenn Normalitäts- und Varianzannahmen erfüllt sind:
-t.test(value ~ group, data = df_sub_complete, var.equal = FALSE)
-
 
 # ##########################
 # Prüfung der Normalitätsannahme
