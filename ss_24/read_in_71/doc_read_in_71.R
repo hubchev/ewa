@@ -18,7 +18,6 @@ head_df_raw <- head(df_raw)
 tt(head_df_raw[,1:11])
 
 
-
 ## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------
 #| label: tbl-df_raw_unique
 #| echo: false
